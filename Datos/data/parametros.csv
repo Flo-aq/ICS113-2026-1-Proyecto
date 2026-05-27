@@ -1,0 +1,16 @@
+parametro,valor,unidad,descripcion
+T_max,30,minutos,Tiempo maximo de viaje permitido (supuesto informe)
+Pres,1495,UF,Presupuesto total (65% costo fijo abrir todos los centros)
+L,3,dias,Dias minimos de operacion de un centro abierto
+P_leve,1,peso,Peso prioridad pacientes leves
+P_moderado,10,peso,Peso prioridad pacientes moderados
+ratio_leve,20,pacientes/equipo/dia,Capacidad atencion leves por equipo
+ratio_moderado,10,pacientes/equipo/dia,Capacidad atencion moderados por equipo
+horizonte_dias,7,dias,Horizonte temporal T
+tau_total_heridos,0.005,por_mil,"Tasa heridos leves+moderados (MMI VIII, Tabla Mercalli)"
+prop_leve,0.74,proporcion,Fraccion leve sobre demanda modelada
+prop_moderado,0.26,proporcion,Fraccion moderado sobre demanda modelada
+factor_camas_post_desastre,0.771,proporcion,Camas operativas post 27-F (90.7% x 85%)
+velocidad_emergencia_kmh,25,km/h,Velocidad prudente en emergencia
+factor_vial,1.35,adimensional,Factor correccion Haversine a ruta real
+escuelas_por_comuna,2,centros,Muestra MINEDUC: top matricula por comuna
