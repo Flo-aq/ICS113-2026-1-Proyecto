@@ -1,0 +1,154 @@
+{
+  "1": {
+    "nombre": "ALGARROBO",
+    "cod_com": "5602"
+  },
+  "2": {
+    "nombre": "CABILDO",
+    "cod_com": "5402"
+  },
+  "3": {
+    "nombre": "CALERA",
+    "cod_com": "5502"
+  },
+  "4": {
+    "nombre": "CALLE LARGA",
+    "cod_com": "5302"
+  },
+  "5": {
+    "nombre": "CARTAGENA",
+    "cod_com": "5603"
+  },
+  "6": {
+    "nombre": "CASABLANCA",
+    "cod_com": "5102"
+  },
+  "7": {
+    "nombre": "CATEMU",
+    "cod_com": "5702"
+  },
+  "8": {
+    "nombre": "CONCON",
+    "cod_com": "5103"
+  },
+  "9": {
+    "nombre": "EL QUISCO",
+    "cod_com": "5604"
+  },
+  "10": {
+    "nombre": "EL TABO",
+    "cod_com": "5605"
+  },
+  "11": {
+    "nombre": "HIJUELAS",
+    "cod_com": "5503"
+  },
+  "12": {
+    "nombre": "ISLA DE PASCUA",
+    "cod_com": "5201"
+  },
+  "13": {
+    "nombre": "JUAN FERNANDEZ",
+    "cod_com": "5104"
+  },
+  "14": {
+    "nombre": "LA CRUZ",
+    "cod_com": "5504"
+  },
+  "15": {
+    "nombre": "LA LIGUA",
+    "cod_com": "5401"
+  },
+  "16": {
+    "nombre": "LIMACHE",
+    "cod_com": "5802"
+  },
+  "17": {
+    "nombre": "LLAILLAY",
+    "cod_com": "5703"
+  },
+  "18": {
+    "nombre": "LOS ANDES",
+    "cod_com": "5301"
+  },
+  "19": {
+    "nombre": "NOGALES",
+    "cod_com": "5506"
+  },
+  "20": {
+    "nombre": "OLMUE",
+    "cod_com": "5803"
+  },
+  "21": {
+    "nombre": "PANQUEHUE",
+    "cod_com": "5704"
+  },
+  "22": {
+    "nombre": "PAPUDO",
+    "cod_com": "5403"
+  },
+  "23": {
+    "nombre": "PETORCA",
+    "cod_com": "5404"
+  },
+  "24": {
+    "nombre": "PUCHUNCAVI",
+    "cod_com": "5105"
+  },
+  "25": {
+    "nombre": "PUTAENDO",
+    "cod_com": "5705"
+  },
+  "26": {
+    "nombre": "QUILLOTA",
+    "cod_com": "5501"
+  },
+  "27": {
+    "nombre": "QUILPUE",
+    "cod_com": "5801"
+  },
+  "28": {
+    "nombre": "QUINTERO",
+    "cod_com": "5107"
+  },
+  "29": {
+    "nombre": "RINCONADA",
+    "cod_com": "5303"
+  },
+  "30": {
+    "nombre": "SAN ANTONIO",
+    "cod_com": "5601"
+  },
+  "31": {
+    "nombre": "SAN ESTEBAN",
+    "cod_com": "5304"
+  },
+  "32": {
+    "nombre": "SAN FELIPE",
+    "cod_com": "5701"
+  },
+  "33": {
+    "nombre": "SANTA MARIA",
+    "cod_com": "5706"
+  },
+  "34": {
+    "nombre": "SANTO DOMINGO",
+    "cod_com": "5606"
+  },
+  "35": {
+    "nombre": "VALPARAISO",
+    "cod_com": "5101"
+  },
+  "36": {
+    "nombre": "VILLA ALEMANA",
+    "cod_com": "5804"
+  },
+  "37": {
+    "nombre": "VINA DEL MAR",
+    "cod_com": "5109"
+  },
+  "38": {
+    "nombre": "ZAPALLAR",
+    "cod_com": "5405"
+  }
+}

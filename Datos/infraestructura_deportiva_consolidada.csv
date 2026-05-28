@@ -2,17 +2,17 @@ ID,Nombre,Comuna,Tipo_Recinto,Coordenada_Lat,Coordenada_Lon,Capacidad_Personas,E
 1,Estadio Sausalito,Viña del Mar,Estadio,-33.0204,-71.5378,18002,Operativo,SI,Wikipedia,Verde,Casa Everton; Copa 1962 / 1991 / 2015
 2,Gimnasio Polideportivo de Viña del Mar,Viña del Mar,Polideportivo,-33.0158,-71.5353,3371,Operativo,SI,Wikipedia,Verde,Sede balonmano Panamericanos 2023
 3,Estadio Elías Figueroa Brander,Valparaíso,Estadio,-33.0220,-71.6400,20575,Operativo,SI,Wikipedia,Verde,Casa Santiago Wanderers; Bicentenario
-4,Estadio O'Higgins,Valparaíso,Estadio,-33.0350 (VALIDAR),-71.6250 (VALIDAR),4000,Operativo,SI,Wikipedia/Google Maps,Amarillo,Complejo Bernardo O'Higgins; (VALIDAR COTA 30)
+4,Complejo Deportivo Bernardo O'Higgins,Valparaíso,Estadio,-33.058611,-71.595000,4000,Operativo,NO,Wikipedia/IND/Municipalidad Valparaíso,Verde,Cerro O'Higgins ~135 m s.n.m.; Inaugurado 1940 (ex Estadio Las Zorras); Propiedad IND
 5,Estadio Municipal Lucio Fariña Fernández,Quillota,Estadio,-32.8875,-71.2428,7680,Operativo,NO,Wikipedia,Verde,Casa San Luis Quillota; Bicentenario 2010
 7,Estadio Municipal Ítalo Composto Scarpatti,Villa Alemana,Estadio,-33.0336,-71.3719,3500,Operativo,NO,Wikipedia,Verde,Casa Deportivo Iván Mayo; Renovado 2012
-10,Estadio Doctor Olegario Henríquez Escalante,San Antonio,Estadio,-33.5917,-71.6167,5000,Operativo,SI,Wikipedia,Amarillo,Casa San Antonio Unido; Renovado 2026; (VALIDAR COTA 30)
+10,Estadio Municipal Doctor Olegario Henríquez Escalante,San Antonio,Estadio,-33.604167,-71.614722,5000,Cerrado,SI,Wikipedia/Municipalidad San Antonio,Verde,Casa San Antonio Unido; Cerrado por obras; Constructora INGEL; Entrega proyectada feb. 2027; ~4-8 m s.n.m.
 11,Estadio Atlético Municipal de Concón,Concón,Estadio,-33.0333,-71.4167,3000,Operativo,SI,Wikipedia,Verde,Casa Concón National; Inaugurado 2010; Césped sintético
-12,Estadio Municipal Nelson Vargas Verdejo,Quintero,Estadio,-33.1167,-71.5000,2500,Operativo,SI,Wikipedia,Amarillo,Casa Quintero Unido; Inaugurado 1969; (VALIDAR COTA 30)
+12,Estadio Municipal Raúl Vargas Verdejo,Quintero,Estadio,-32.798889,-71.528889,2500,Operativo,SI,Wikipedia/Municipalidad Quintero,Verde,Casa Quintero Unido; Inaugurado 1969; ~10-15 m s.n.m.; Coordenadas corregidas (error ~40 km en fuente original)
 15,Gimnasio Municipal Quilpué,Quilpué,Polideportivo,-33.04,-71.43,1400,Operativo,NO,Mapcarta,Verde,+50 años servicio; 1400 usuarios/semana; Renovado 2019
 18,Estadio Municipal Arturo Echazarreta Larraín,Casablanca,Estadio,-33.3172,-71.4103,1672,Operativo,NO,Wikipedia,Verde,Estadio municipal; Capacidad exacta
-19,Estadio Municipal de Cartagena,Cartagena,Estadio,-33.5407,-71.6010,2000,Operativo,SI,Wikipedia,Verde,Remodelado 2009 y 2018; (VALIDAR COTA 30)
-20,Estadio Municipal de El Quisco,El Quisco,Estadio,-33.3989,-71.6882,2000,Operativo,SI,Wikipedia,Verde,Conocido también como Estadio de El Quisco; (VALIDAR COTA 30)
-24,Estadio Municipal Arturo Longton Guerrero,Quilpué,Estadio,-33.0580 (VALIDAR),-71.4583 (VALIDAR),1500,Operativo,NO,Wikipedia,Verde,Complejo Villa Olímpica; Capacidad estimada
+19,Estadio Municipal Fernando Ross Marchessi,Cartagena,Estadio,-33.540556,-71.600833,2000,Operativo,SI,Wikipedia/Municipalidad Cartagena,Verde,Reconstrucción 2009; Obras auxiliares 2016; Local alternativo San Antonio Unido; ~15-20 m s.n.m.
+20,Estadio Municipal Eugenio Castro González,El Quisco,Estadio,-33.398531,-71.688125,2000,Operativo,SI,Wikipedia/PLADECO El Quisco,Verde,Conocido también como Estadio de El Quisco; ~25-28 m s.n.m.; Límite crítico Cota 30
+24,Estadio Municipal Arturo Longton Guerrero,Quilpué,Estadio,-33.058056,-71.458333,1500,Operativo,NO,Wikipedia/Municipalidad Quilpué,Verde,Complejo y Parque Villa Olímpica; ~120-130 m s.n.m.; Capacidad estimada; Antes llamado Estadio Municipal Villa Olímpica
 25,Estadio de Hanga Roa,Isla de Pascua,Estadio,-27.1475,-109.4297,3000,Operativo,SI,Wikipedia,Verde,Cancha pasto sintético; Inaugurado 1988
 26,Estadio Municipal de Juan Fernández,Juan Fernández,Estadio,-33.6336,-78.8298,350,Operativo,SI,Wikipedia,Verde,Inaugurado 2012 en Robinson Crusoe
 27,Estadio Municipal Ángel Navarrete Candia,Limache,Estadio,-32.9968,-71.2682,3000,Operativo,NO,Wikipedia,Verde,Complejo deportivo municipal con piscina
