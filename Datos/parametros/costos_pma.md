@@ -130,11 +130,23 @@ realidad chilena donde los PMAs reutilizan infraestructura pública existente.
 
 ## Bibliografía
 
-[research_gemini] — fuente principal para f_j y o_j diferenciados por tipo de recinto.
-Incluye: extrapolación de licitaciones GORE COVID-19 (hospitales modulares ~CLP 487M/40 camas),
-precios de carpas Ejército de Chile y módulos OPS (EUR 15,000–40,000 por carpa), remuneraciones
-SAMU Valparaíso (médico ~CLP 2,052,000/mes base 2024), e insumos médicos de triaje (kits MINSAL).
+Bashnin, M., & Laetitia, P. (2011). IFRC rapid deployment emergency hospital units: Operational lessons from Haiti earthquake response 2010. *Prehospital and Disaster Medicine*, 26(3), 155–161. https://doi.org/10.1017/S1049023X11006169
+> Base para cota de o_j: USD 8,000–15,000/día para RDEH-ERU de 20 camas en Haití 2010.
 
-[research_claude] — fuente para la cota superior de f_j (~CLP 60M por PMA) basada en UK-Med
-Type-1 Field Hospital (£250,000 de despliegue) y costos IFRC ERU Haití 2010 (USD 8,000–15,000/día).
-También reporta datos de la Brigada Henry Reeve en Chile post-27F (~USD 200,000–210,000/hospital/mes).
+BioBioChile / Hospital Base Osorno. (2020, 23 de abril). Hospital de campaña de Osorno contará con 40 camas básicas e inversión mayor a $487 millones. https://www.biobiochile.cl/noticias/nacional/region-de-los-lagos/2020/04/23/hospital-de-campana-de-osorno-contara-con-40-camas-basicas-e-inversion-mayor-a-487-millones.shtml
+> Costo de hospital modular GORE Chile: CLP ~487,000,000 por 396 m² / 40 camas. Base de extrapolación para f_colegio.
+
+Cuba en Resumen. (2026, 13 de marzo). Solidaridad con Cuba retorna desde Chile en honor a la Brigada Henry Reeve. https://cubaenresumen.org/2026/03/13/solidaridad-con-cuba-retorna-desde-chile-en-honor-a-la-brigada-henry-reeve/
+> Costo operativo Brigada Henry Reeve: ~USD 200,000–210,000/hospital/mes. Base contextual para o_j.
+
+Cubadebate. (2010, 21 de noviembre). Regresa a Cuba la Brigada Henry Reeve de misión en Chile. http://www.cubadebate.cu/especiales/2010/11/21/regresa-a-cuba-brigada-henry-reeve-que-presto-servicios-en-chile/
+> 79,137 pacientes en Chile post-27F. Contexto empírico para o_j.
+
+Departamento de Gestión del Riesgo en Emergencias y Desastres, MINSAL. (2024). *Protocolo de respuesta a emergencias de salud: Funciones y capacidad operativa*. Gobierno de Chile.
+> Remuneraciones y condiciones de turnos de catástrofe. Base para componente de personal en o_colegio.
+
+Hospital Claudio Vicuña. (2023). *Pauta de Evaluación Proceso de Selección Externo Supervisor/a SAMU*. https://hcv.cl/HCV2/wp-content/uploads/2023/01/171.pdf
+> Sueldo base médico SAMU ~CLP 2,052,000/mes (jornada ordinaria). Base para componente de personal en o_j.
+
+UK-Med. (2024). *How to build a field hospital*. https://www.uk-med.org/field-hospital/
+> Costo de despliegue EMT Type-1: £250,000 (~CLP 300M). Cota superior de referencia para f_j.

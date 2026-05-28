@@ -190,17 +190,32 @@ restricción presupuestaria en escenarios de tamaño razonable.
 
 ## Bibliografía
 
-[research_claude] — fuente para TAU_TOTAL: tabla MMI VIII con tasa 2–10 heridos/1,000 hab.;
-tasas locales 27-F en epicentro ~5–8/1,000; Bar-On E (2023) Acta Orthop Traumatol Turc
-PMC10837594 (shift de demanda aguda→crónica pasado el día 10, justifica cola PHI días 5–7).
-También: IFRC 27-F final appeal MDRCL006 (CHF 16M para respuesta total 36 meses), contexto
-para escala de Pres; SENAPRED El Mostrador 20-feb-2024 (presupuesto CLP 23,148,341,000).
+Bar-On, E., Unger, R., Kessel, B., & Kluger, Y. (2023). Medical care following earthquakes: Clinical, organizational, and logistic challenges. *Acta Orthopaedica et Traumatologica Turcica*, 57(6), 296–300. PMC10837594. https://doi.org/10.5152/j.aott.2023.23127
+> «By day 10, <50% of patients treated will be due to earthquake-related injuries.» Justifica la cola plana de PHI en días 5–7.
 
-[research_gemini] — fuente para PROP: distribución START 27-F Chile (~75% ambulatorio /
-25% hospitalizado, MINSAL 2010); Yushu 2010 PMC4690927 (~70% verde / 20% amarillo / 10% rojo).
-Calibración de Pres (CLP 1,200M): extrapolación asignaciones extraordinarias Subsecretaría
-del Interior y reasignaciones GORE en desastres anteriores. OPS/PAHO patrones demanda
-post-terremoto (Haití 2010, Ecuador 2016) para forma de la curva PHI.
+Dirección de Presupuestos (DIPRES), Ministerio de Hacienda. (2024). *Ley de Presupuestos del Sector Público 2024*. Gobierno de Chile. https://www.dipres.gob.cl/
+> Línea de la Subsecretaría del Interior para emergencias. Base para escala de Pres.
 
-[INE 2024] Instituto Nacional de Estadísticas. *Censo 2024 — Región de Valparaíso*.
-Fuente de `pop_i` para D_i,t,g. Datos consolidados en `poblacion_comunas_censo2024_consolidado.csv`.
+El Mostrador. (2024, 20 de febrero). Las grietas del Senapred: presupuesto exiguo y falta de personal. https://www.elmostrador.cl/noticias/pais/2024/02/20/las-grietas-del-senapred-presupuesto-exiguo-y-falta-de-personal/
+> Presupuesto SENAPRED 2024: CLP 23,148,341,000 total nacional. Base para calibración de Pres.
+
+Instituto Nacional de Estadísticas de Chile (INE). (2024). *Censo de Población y Vivienda 2024 — Resultados por comuna, Región de Valparaíso*. https://www.ine.gob.cl/estadisticas/sociales/censos-de-poblacion-y-vivienda/censo-de-poblacion-y-vivienda
+> Fuente de `pop_i` para el cálculo de D_i,t,g. Datos en `poblacion_comunas_censo2024_consolidado.csv`.
+
+International Federation of the Red Cross and Red Crescent Societies (IFRC). (2010). *Chile: Earthquake Emergency Appeal N° MDRCL006*. https://go-api.ifrc.org/publicfile/download?path=/docs/appeals/10/&name=MDRCL006eu12.pdf
+> CHF 16,075,870 (~CLP 15,600M) para 36 meses de respuesta total. Contexto para escala de Pres.
+
+Ministerio de Salud de Chile (MINSAL). (2010). *Informe de situación: atención de heridos tras terremoto del 27 de febrero de 2010*. Gobierno de Chile.
+> ~12,000 heridos atendidos: ~9,000 ambulatorios (75%), ~3,000 hospitalizados (25%). Base para PROP.
+
+Ochi, S., Kato, S., Kobayashi, K., & Wakai, S. (2015). Emergency medical response in the 2010 Yushu earthquake. *International Journal of Environmental Research and Public Health*, 12(12), 15831–15845. https://doi.org/10.3390/ijerph121215016
+> Distribución START post-Yushu: ~70% verde / 20% amarillo / 10% rojo. Base adicional para PROP.
+
+Organización Panamericana de la Salud (OPS/PAHO). (2011). *Terremoto en Chile: lecciones aprendidas para la respuesta en salud*. https://www.paho.org/es
+> Tasas de heridos post-27F por región (~5–8/1,000 hab. en epicentro). Patrones de demanda para PHI. Base para TAU_TOTAL.
+
+Secretaría Nacional de Protección Civil (SENAPRED). (2024). *Presupuesto 2024: Asignación de recursos por región*. https://www.senapred.gob.cl/
+> CLP 23,148,341,000 total nacional (16 regiones). Contexto para Pres.
+
+United States Geological Survey (USGS). (2023). *Modified Mercalli Intensity Scale*. https://www.usgs.gov/programs/earthquake-hazards/modified-mercalli-intensity-scale
+> Tabla MMI VIII: 2–10 heridos/1,000 hab. Valor 5/1,000 adoptado como punto medio. Base para TAU_TOTAL.

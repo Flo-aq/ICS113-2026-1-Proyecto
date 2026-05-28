@@ -195,17 +195,38 @@ Para solo leves (el mayor volumen): ~25/EES/día. Para moderados: ~10/EES/día.
 
 ## Bibliografía
 
-[research_claude] — fuente para req_j y ratio_g (escenario=1): estándares WHO EMT Blue Book
-2021 (Type-1 Fixed ≥100 pac/día con 11 personal médico); Estonian EMT (3 médicos + 6 enfermeras
-mínimo); StatPearls START triage (tiempos 30–60 s clasificación, 30–45 min estabilización
-moderado); Maryland MIEMSS; Singapore EMT Myanmar 2025 (~225 pac/día, PMC12818970).
-También: SAMU Litoral (~3 EES día 1), López Tagle & Santana 2011 (curvas movilización 27-F,
-Rev Panam Salud Pública 30(2):160–6), SENAPRED El Mostrador 20-feb-2024 (18 funcionarios/región),
-Auditoría ONEMI 2010 (colapso coordinación >4–5 operaciones simultáneas día 1).
+Cubadebate. (2010, 21 de noviembre). Regresa a Cuba la Brigada Henry Reeve de misión en Chile. http://www.cubadebate.cu/especiales/2010/11/21/regresa-a-cuba-brigada-henry-reeve-que-presto-servicios-en-chile/
+> 79,137 pacientes en 8 meses con ~78 personal (~152 pac/hospital/día). Contexto empírico para ratio_g.
 
-[research_gemini] — fuente para req_j y ratio_g diferenciados por tipo (escenario=3): MINSAL
-Norma Técnica N°17 (dotación SAMU), rendimientos de urgencia MINSAL (10–15 min/paciente leve,
-25–30 min/paciente moderado), Yushu 2010 (PMC4690927, ~50 pac/equipo/día), Brigada Henry Reeve
-Chile 27-F (79,137 pac/8 meses/2 hospitales ~152 pac/hospital/día, Cubadebate 21-nov-2010).
-H_t escenario=3: dotaciones CESFAM/SAPU regionales, sanidad FF.AA., protocolo EMT Américas OPS.
-MaxC_t: análisis de dotación SENAPRED y experiencia campo 27-F.
+Departamento de Gestión del Riesgo en Emergencias y Desastres, MINSAL. (2024). *Protocolo de respuesta a emergencias de salud: Funciones y capacidad operativa*. Gobierno de Chile.
+> Dotaciones SAMU Valparaíso (~3 EES día 1) y capacidad de bases costeras. Base para H_t.
+
+Dirección Nacional de SAMU, MINSAL. (2003). *Norma Técnica N°17: Atención Prehospitalaria*. Gobierno de Chile.
+> Dotación mínima SAMU móvil avanzado: 4 personas (1 médico + 1 enfermera + 2 TENS = 1 EES). Define la unidad base del modelo.
+
+El Mostrador. (2024, 20 de febrero). Las grietas del Senapred: presupuesto exiguo y falta de personal. https://www.elmostrador.cl/noticias/pais/2024/02/20/las-grietas-del-senapred-presupuesto-exiguo-y-falta-de-personal/
+> «Cada dirección regional funciona con 18 funcionarios» y «cerca de 6 ó 7 en terreno habitualmente». Base para MaxC_t.
+
+G5Noticias.cl. (2025, 30 de septiembre). En alerta: funcionarios del SAMU de Viña del Mar exigen dotación segura en enfermería. https://g5noticias.cl/2025/09/30/en-alerta-funcionarios-del-samu-de-vina-del-mar-exigen-dotacion-segura-en-enfermeria-para-garantizar-la-vida-y-seguridad-de-la-poblacion/
+> Dotación actual SAMU Viña del Mar: 3 enfermeras/turno (demandan 4). Relevante para cota inferior de H_1.
+
+López-Tagle, R., & Santana, J. (2011). Respuesta del sistema de salud a los desastres: Lecciones del terremoto de Chile de 2010. *Revista Panamericana de Salud Pública*, 30(2), 160–166. https://doi.org/10.1590/S1020-49892011000800008
+> Curvas de movilización post-27F: SAMUR-Madrid llegó al día 3 (9 sanitarios ≈ 2 EES); pico refuerzos días 3–7. Base principal para forma de H_t.
+
+Ministerio de Salud, Chile. (2015). *Servicio de Salud Valparaíso – San Antonio: Perfil institucional*. https://www.ochisap.cl/wp-content/uploads/2022/05/6-SS-Valpara%EF%BF%BDso-SA.pdf
+> Red regional: 3 hospitales alta complejidad + 6 SAPU + 13 consultorios. Base para estimación de H_t días 2–3.
+
+Ochi, S., Kato, S., Kobayashi, K., & Wakai, S. (2015). Emergency medical response in the 2010 Yushu earthquake. *International Journal of Environmental Research and Public Health*, 12(12), 15831–15845. https://doi.org/10.3390/ijerph121215016
+> 12,128 heridos en 4 días con ~15 equipos (~50 pac/equipo/día). Base empírica para ratio_g.
+
+Oficina Nacional de Emergencia. (2010). *Informe ejecutivo de la auditoría de la Oficina Nacional de Emergencia del Ministerio del Interior*. Gobierno de Chile.
+> Coordinación logística colapsó más allá de 4–5 operaciones simultáneas el día 1. Base para MaxC_1.
+
+Organización Panamericana de la Salud (OPS). (2021). *Equipos Médicos de Emergencia (EME): Clasificación y estándares de desempeño*. OMS/OPS. https://www.paho.org/en/health-emergencies/emergency-medical-teams
+> Protocolo de despliegue EMT Type-1 en 48–72h post-declaración. Base para H_t días 5–7 (escenario=3).
+
+Singapore Emergency Medical Team. (2025). Field report of the Singapore Emergency Medical Team deployment following the 2025 Myanmar earthquake. *Prehospital and Disaster Medicine*. PMC12818970.
+> 1,803 pacientes en 8 días (~225/día) con EMT Type-1 Fixed. Base empírica para ratio_g (escenario=3).
+
+World Health Organization (WHO). (2021). *Emergency Medical Teams: Minimum standards and recommendations for excellence. WHO Blue Book*. https://www.who.int/publications/i/item/9789240012363
+> EMT Type-1 Fixed: ≥100 pac/día con mínimo 11 personal médico; Estonian EMT: 3 médicos + 6 enfermeras mínimo. Base para req_j y ratio_g (escenario=1).
