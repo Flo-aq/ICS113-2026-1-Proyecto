@@ -7,7 +7,7 @@ Edita los parámetros en el bloque __main__ y ejecuta:
 
 Archivos de referencia generados automáticamente si no existen:
     columnas_colegios.json  — mapa nombre↔índice de todas las columnas de Colegios.csv
-    comunas_region5.json    — mapa ID→nombre de todas las comunas de Región 5
+    ../comunas.json         — mapa ID→nombre de todas las comunas de Región 5
 
 Ver normativa_recintos_escolares.md para la justificación de los parámetros de capacidad.
 """
@@ -19,9 +19,9 @@ import unicodedata
 from collections import defaultdict
 
 BASE          = os.path.dirname(os.path.abspath(__file__))
-COLEGIOS_CSV  = os.path.join(os.path.dirname(BASE), "Colegios.csv")
+COLEGIOS_CSV  = os.path.join(BASE, "Colegios.csv")
 COLUMNAS_JSON = os.path.join(BASE, "columnas_colegios.json")
-COMUNAS_JSON  = os.path.join(BASE, "comunas_region5.json")
+COMUNAS_JSON  = os.path.join(os.path.dirname(BASE), "comunas.json")
 
 # Parámetros normativos de capacidad (ver normativa_recintos_escolares.md)
 AREA_AULA_M2_POR_ALUMNO   = 2.5   # Guía Mineduc (rango 2.0–3.2 m²/alumno)
@@ -29,6 +29,13 @@ AREA_PATIO_M2_POR_ALUMNO  = 2.5   # OGUC Art. 4.5.x (mín. ~2.5 m²/alumno)
 AREA_MULTICANCHA_M2       = 540   # 18×30 m; OGUC exige si matrícula ≥ 135
 FACTOR_USO_REFUGIO        = 0.65  # Fracción del área total usable como albergue
 M2_POR_PERSONA            = 3.5   # Estándar SPHERE mínimo para refugio
+
+# Costos por persona de capacidad — ver Datos/parametros/costos_pma.md
+_CAP_REF  = 500
+_F_REF    = 22_500_000   # CLP fijo por apertura (referencia cap=500)
+_O_REF    =  2_800_000   # CLP operativo/día (referencia cap=500)
+_REQ_REF  = 3            # EES mínimos (referencia cap=500)
+_REQ_MIN  = 2            # Mínimo absoluto de equipos
 
 
 # ---------------------------------------------------------------------------
@@ -89,8 +96,15 @@ def _gen_comunas_json() -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Cálculo de capacidad como refugio
+# Cálculo de capacidad y costos
 # ---------------------------------------------------------------------------
+
+def _params_colegio(cap_j: int) -> tuple[int, int, int]:
+    """Retorna (f_j, o_j, req_j) escalados linealmente con cap_j."""
+    f_j   = round(_F_REF / _CAP_REF * cap_j)
+    o_j   = round(_O_REF / _CAP_REF * cap_j)
+    req_j = max(_REQ_MIN, math.ceil(_REQ_REF / _CAP_REF * cap_j))
+    return f_j, o_j, req_j
 
 def _estimar_capacidad(matricula: int, holgura: float) -> tuple[int, int, int]:
     """
@@ -118,6 +132,7 @@ def filtrar_colegios(
     n: int = 2,
     holgura: float = 0.0,
     comunas: list[int] | None = None,
+    comunas_nombres: list[str] | None = None,
     columnas: list[int] | None = None,
     min_matricula: int = 300,
     salida: str = "colegios_filtrados.csv",
@@ -132,6 +147,8 @@ def filtrar_colegios(
     n               Top-N colegios por matrícula por comuna.
     holgura         % aplicado sobre cap_base: positivo → más, negativo → menos.
     comunas         IDs del JSON de comunas (None = todas las comunas de Región 5).
+    comunas_nombres Nombres normalizados de comunas (alternativa a comunas por ID).
+                    Si se pasa, tiene precedencia sobre comunas.
     columnas        Índices de columnas a incluir (None = columnas_utiles del JSON).
     min_matricula   Matrícula mínima para considerar un colegio.
     salida          Nombre del archivo CSV de salida (relativo a Datos/colegios/).
@@ -153,7 +170,9 @@ def filtrar_colegios(
     col_names   = [col_map["por_indice"][str(i)] for i in col_indices]
 
     # Nombres normalizados de las comunas a filtrar
-    if comunas is not None:
+    if comunas_nombres is not None:
+        nombres_filtro = {normalize(n) for n in comunas_nombres}
+    elif comunas is not None:
         nombres_filtro = {
             comunas_map[str(c)]["nombre"]
             for c in comunas
@@ -205,16 +224,18 @@ def filtrar_colegios(
 
     # 4. Escribir CSV de salida
     out_path = os.path.join(BASE, salida)
-    extra_headers = ["cap_area_m2", "cap_personas", "cap_con_holgura"]
+    # cap_j = cap_con_holgura (alias uniforme para construir_instancia.py)
+    extra_headers = ["cap_area_m2", "cap_personas", "cap_j", "f_j", "o_j", "req_j"]
 
     with open(out_path, "w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(col_names + extra_headers)
         for _nom_com, row in selected:
             matricula = int(row[idx["MAT_TOTAL"]] or 0)
-            area, cap_base, cap_hol = _estimar_capacidad(matricula, holgura)
+            area, cap_base, cap_j = _estimar_capacidad(matricula, holgura)
+            f_j, o_j, req_j = _params_colegio(cap_j)
             subset = [row[i] if i < len(row) else "" for i in col_indices]
-            writer.writerow(subset + [area, cap_base, cap_hol])
+            writer.writerow(subset + [area, cap_base, cap_j, f_j, o_j, req_j])
 
     # 5. Resumen
     comunas_cubiertas = sorted({nom for nom, _ in selected})
