@@ -1,6 +1,6 @@
 parametro,valor,unidad,descripcion
 T_max,30,minutos,Tiempo maximo de viaje permitido (supuesto informe)
-Pres,1495,UF,Presupuesto total (65% costo fijo abrir todos los centros)
+Pres,1528,UF,Presupuesto total (65% costo fijo abrir todos los centros)
 L,3,dias,Dias minimos de operacion de un centro abierto
 P_leve,1,peso,Peso prioridad pacientes leves
 P_moderado,10,peso,Peso prioridad pacientes moderados
@@ -15,7 +15,7 @@ velocidad_emergencia_kmh,25,km/h,Velocidad prudente en emergencia
 factor_vial,1.35,adimensional,Factor correccion Haversine a ruta real
 escuelas_por_comuna,2,centros,Centros candidatos por comuna
 mat_min,300,alumnos,Matricula minima para considerar colegio
-instancia,informe2_5_comunas,texto,Tipo de instancia generada
-num_comunas,5,comunas,Comunas en la instancia
-num_centros,10,centros,Centros de triaje candidatos
-seed,,entero,Semilla aleatoria (si aplica)
+instancia,configurable_muestra,texto,Tipo de instancia generada
+num_comunas,6,comunas,Comunas en la instancia
+num_centros,12,centros,Centros de triaje candidatos
+seed,123,entero,Semilla aleatoria (si aplica)

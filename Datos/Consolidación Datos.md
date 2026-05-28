@@ -355,7 +355,7 @@ Ministerio de Salud de Chile (2010). *El terremoto y tsunami del 27 de febrero e
 - Estudios académicos (PUC, USM)
 
 
-## Seccion de Colegios y Script generador de datos
+## Sección de Colegios y scripts generadores de datos
 
 ## `Colegios.csv`
 
@@ -384,29 +384,80 @@ https://datosabiertos.mineduc.cl/directorio-de-establecimientos-educacionales/
 
 El script generar_datos.py **no usa todo el archivo**: filtra colegios urbanos activos de la Región de Valparaíso, en las cinco comunas del estudio, con matrícula mínima de 300 alumnos.
 
-## `generar_datos.py`
+## Scripts generadores
 
-Script que **construye una instancia reducida** alineada al modelo del Informe 2. Toma `Colegios.csv` y parámetros del terremoto (escala Mercalli, población, hospitales) para producir los CSV en `Datos/data/`.
+La lógica compartida está en `generar_datos_core.py`. Hay **tres puntos de entrada**:
 
-### Comunas y hospitales modelados
+| Script | Uso | Salida por defecto |
+|--------|-----|-------------------|
+| `generar_datos.py` | Instancia reducida del Informe 2 (5 comunas fijas, 2 colegios c/u) | `Datos/data/` |
+| `generar_datos_configurable.py` | Muestra aleatoria de comunas de la región 5 | `Datos/data/configurable/` |
+| `generar_datos_completo.py` | Todas las comunas con colegios en MINEDUC (37 con `mat_min=300`) | `Datos/data/completo/` |
 
-**Comunas** (5): Viña del Mar, Valparaíso, Quilpué, Villa Alemana y Concón. Cada una tiene población fija definida en el script y coordenadas calculadas como **centroide ponderado por matrícula** de sus colegios urbanos.
+### Comunas y hospitales
 
-**Hospitales** (3): Carlos Van Buren, Eduardo Pereira (Valparaíso) y Gustavo Fricke (Viña del Mar), con camas base y ubicación fija.
+- **Población:** Censo 2024 desde `poblacion_comunas_censo2024_consolidado.csv`; si una comuna no está en ese archivo, se estima a partir de la matrícula escolar.
+- **Coordenadas de comuna:** centroide ponderado por matrícula de colegios urbanos activos.
+- **Hospitales** (3, fijos en todos los modos): Carlos Van Buren, Eduardo Pereira (Valparaíso) y Gustavo Fricke (Viña del Mar).
 
-### Flujo del script
+### Flujo común (`generar_datos_core.py`)
 
-1. **Cargar colegios** (`load_schools_by_commune`): lee `Colegios.csv`, filtra región 5, establecimientos activos y urbanos, y agrupa por comuna.
-2. **Seleccionar centros de triaje** (`select_centers`): por comuna toma los **2 colegios con mayor matrícula** (`ESCUELAS_POR_COMUNA`). Con más centros, se puede subir ese valor (p. ej. 3).
-3. **Derivar parámetros por centro** según matrícula:
-   - `cap_j`: capacidad de atención ≈ 60% de la matrícula
-   - `f_j`, `o_j`: costo fijo y operativo (UF)
-   - `req_j`: equipos mínimos requeridos
-4. **Calcular demanda** (`distribute_demand`): heridos leves (74%) y moderados (26%) con tasa τ = 5 por mil habitantes (MMI VIII), repartidos en 7 días con perfil φ.
-5. **Tiempos y cobertura**: distancia Haversine × factor vial (1.35), velocidad 25 km/h; binario `A_ij` / `A_ik` si tiempo ≤ `T_max` (30 min).
-6. **Escribir CSV** en `Datos/data/` e imprimir resumen de cobertura.
+1. Cargar colegios de `Colegios.csv` (región 5, activos, urbanos, `mat_min`).
+2. Seleccionar centros de triaje (top por matrícula o todos, según el modo).
+3. Derivar `cap_j`, `f_j`, `o_j`, `req_j` según matrícula del colegio.
+4. Calcular demanda HAZUS (τ = 5‰, 74% leve / 26% moderado, 7 días).
+5. Matrices de tiempo Haversine y cobertura binaria (`T_max` = 30 min).
+6. Escribir CSV y resumen de cobertura.
 
-### Parámetros principales (editables al inicio del script)
+### 1. `generar_datos.py` — instancia Informe 2
+
+**Comunas fijas (5):** Viña del Mar, Valparaíso, Quilpué, Villa Alemana, Concón.  
+**Colegios:** 2 por comuna (mayor matrícula).
+
+```bash
+python Datos/generar_datos.py
+```
+
+### 2. `generar_datos_configurable.py` — muestra aleatoria
+
+Elige **N comunas al azar** entre las ~37 con colegios elegibles en la región 5, y **K colegios** por comuna (top matrícula).
+
+```bash
+# 8 comunas aleatorias, 3 colegios c/u, reproducible con semilla
+python Datos/generar_datos_configurable.py --comunas 8 --escuelas 3 --seed 42
+
+# Comunas fijas (sin sorteo)
+python Datos/generar_datos_configurable.py --lista "VIÑA DEL MAR,VALPARAISO,QUILPUE" --escuelas 2
+
+# Ver comunas disponibles
+python Datos/generar_datos_configurable.py --listar-comunas
+```
+
+| Argumento | Default | Descripción |
+|-----------|---------|-------------|
+| `--comunas` | 5 | Cantidad de comunas aleatorias |
+| `--escuelas` | 2 | Top K colegios por comuna |
+| `--mat-min` | 300 | Matrícula mínima |
+| `--seed` | — | Semilla para repetir la muestra |
+| `--lista` | — | Comunas fijas separadas por coma |
+| `--output` | `data/configurable` | Carpeta de salida |
+
+### 3. `generar_datos_completo.py` — región a fondo
+
+Incluye **todas las comunas** de Valparaíso con al menos un colegio que cumple `mat_min`. Sin `--escuelas`, usa **todos** los colegios elegibles por comuna (~400+ centros); con `--escuelas N` limita al top N (recomendado si el solver es lento).
+
+```bash
+# Todas las comunas, todos los colegios elegibles
+python Datos/generar_datos_completo.py
+
+# 37 comunas, top 3 colegios c/u (~98 centros)
+python Datos/generar_datos_completo.py --escuelas 3
+
+# Incluir comunas pequeñas (matrícula desde 100)
+python Datos/generar_datos_completo.py --mat-min 100
+```
+
+### Parámetros globales (en `generar_datos_core.py`)
 
 | Parámetro | Valor | Significado |
 |-----------|-------|-------------|
@@ -414,33 +465,24 @@ Script que **construye una instancia reducida** alineada al modelo del Informe 2
 | `T_MAX` | 30 min | Tiempo máximo de viaje permitido |
 | `TAU_TOTAL` | 0.005 | Heridos por mil habitantes |
 | `PROP` | 74% / 26% | Proporción leve / moderado |
-| `ESCUELAS_POR_COMUNA` | 2 | Centros candidatos por comuna |
-| `MAT_MIN` | 300 | Matrícula mínima para considerar un colegio |
+| `MAT_MIN` | 300 (configurable) | Matrícula mínima del colegio |
 | `FACTOR_CAMAS` | 0.907 × 0.85 | Camas operativas post-desastre |
 
-### Archivos generados (`Datos/data/`)
+`MaxC_t` y `H_t` se escalan automáticamente según el número de centros y comunas de cada instancia.
+
+### Archivos generados
 
 | Archivo | Contenido |
 |---------|-----------|
 | `nodos_comunas.csv` | Comunas: id, nombre, lat, lon, población |
 | `nodos_centros.csv` | Centros de triaje (colegios): id, RBD, capacidad, costos, equipos |
 | `nodos_hospitales.csv` | Hospitales: ubicación, camas base y capacidad efectiva |
-| `cap_hospital_dia.csv` | Capacidad hospitalaria por día (degradación post-sismo) |
-| `demanda.csv` | Demanda diaria por comuna, día y gravedad (`leve`, `moderado`) |
+| `cap_hospital_dia.csv` | Capacidad hospitalaria por día |
+| `demanda.csv` | Demanda diaria por comuna, día y gravedad |
 | `demanda_max.csv` | Demanda máxima diaria por comuna y gravedad |
-| `tiempos_ij.csv` | Tiempo comuna → centro (minutos) |
-| `tiempos_ik.csv` | Tiempo comuna → hospital (minutos) |
-| `cobertura_ij.csv` | Indicador binario de cobertura comuna–centro |
-| `cobertura_ik.csv` | Indicador binario de cobertura comuna–hospital |
+| `tiempos_ij.csv` / `tiempos_ik.csv` | Tiempos comuna → centro / hospital |
+| `cobertura_ij.csv` / `cobertura_ik.csv` | Cobertura binaria |
 | `personal_dia.csv` | Personal disponible por día |
 | `max_centros_dia.csv` | Máximo de centros abiertos por día |
-| `parametros.csv` | Parámetros globales del modelo (T_max, presupuesto, pesos, etc.) |
-
-### Cómo ejecutar
-
-Desde la raíz del repositorio (o desde `Datos/`):
-
-```bash
-python Datos/generar_datos.py
-```
+| `parametros.csv` | Parámetros globales + metadatos de la instancia |
 
