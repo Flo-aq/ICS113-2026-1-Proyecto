@@ -48,16 +48,14 @@ def cargar_datos(data_dir: str) -> dict:
     # ── Conjuntos ──────────────────────────────────────────────────────────
     comunas = leer_csv(os.path.join(data_dir, "nodos_comunas.csv"))
     centros = leer_csv(os.path.join(data_dir, "nodos_centros.csv"))
+    hospitales = leer_csv(os.path.join(data_dir, "nodos_hospitales.csv"))
     params  = {r["parametro"]: r["valor"] for r in leer_csv(os.path.join(data_dir, "parametros.csv"))}
 
     I = [int(c["id"]) for c in comunas]           # zonas de demanda
     J = [int(c["id"]) for c in centros]           # centros de triaje candidatos
     T = list(range(1, 8))                          # días (1..7)
     G = ["leve", "moderado"]                      # tipos de gravedad
-    # Nota: el modelo incluye hospitales (K) en el pdf, pero no hay datos de
-    # hospitales en los CSVs provistos. Se modela K = {} (vacío), dejando la
-    # estructura preparada para extenderse.
-    K = []
+    K = [int(c["k"]) for c in hospitales]         # hospitales
 
     d["I"] = I
     d["J"] = J
@@ -92,6 +90,10 @@ def cargar_datos(data_dir: str) -> dict:
     cob = leer_csv(os.path.join(data_dir, "cobertura_ij.csv"))
     d["A_ij"]  = {(int(r["i"]), int(r["j"])): int(r["A_ij"]) for r in cob}
 
+    # ── Cobertura A_ik ─────────────────────────────────────────────────────
+    cob_h = leer_csv(os.path.join(data_dir, "cobertura_ik.csv"))
+    d["A_ik"] = {(int(r["i"]), int(r["k"])): int(r["A_ik"]) for r in cob_h}
+
     # ── Demanda D_itg ──────────────────────────────────────────────────────
     dem = leer_csv(os.path.join(data_dir, "demanda.csv"))
     d["D_itg"] = {(int(r["i"]), int(r["t"]), r["g"]): int(r["D_i_t_g"]) for r in dem}
@@ -101,7 +103,7 @@ def cargar_datos(data_dir: str) -> dict:
     d["D_ig_max"] = {(int(r["i"]), r["g"]): int(r["D_i_g_max"]) for r in dmax}
 
     # ── Capacidad de hospitales (vacía — sin datos) ────────────────────────
-    d["cap_k_t"] = {}   # {(k, t): capacidad}
+    d["cap_k_t"] = {(int(r["k"]), t): int(r[f"Cap_{t}"]) for r in hospitales for t in T}   # {(k, t): capacidad}
 
     return d
 
@@ -277,7 +279,7 @@ def construir_modelo(d: dict) -> tuple:
         for i in I:
             for t in T:
                 for g in G:
-                    A = d["A_ij"].get((i, k), 0)   # reutiliza estructura
+                    A = d["A_ik"].get((i, k), 0)
                     D_max = d["D_ig_max"].get((i, g), 0)
                     m.addConstr(
                         w[i, k, t, g] <= A * D_max,
