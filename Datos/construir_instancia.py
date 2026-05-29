@@ -31,6 +31,8 @@ COL_JSON      = os.path.join(BASE, "colegios", "columnas_colegios.json")
 COMUNAS_JSON       = os.path.join(BASE, "comunas.json")
 COLEGIOS_FILTRADOS = os.path.join(BASE, "colegios", "colegios_filtrados.csv")
 RECINTOS_FILTRADOS = os.path.join(BASE, "recintos", "recintos_filtrados.csv")
+HOSPITALES_CSV     = os.path.join(BASE, "hospitales", "hospitales_parametrizados.csv")
+COLINDANCIA_JSON   = os.path.join(BASE, "colindancia.json")
 DATA_DIR           = os.path.join(BASE, "data")
 
 # ---------------------------------------------------------------------------
@@ -43,8 +45,9 @@ def _load_module(path: str, name: str):
     spec.loader.exec_module(mod)
     return mod
 
-_mod_col = _load_module(os.path.join(BASE, "colegios", "filtrar_colegios.py"), "filtrar_colegios")
-_mod_rec = _load_module(os.path.join(BASE, "recintos", "filtrar_recintos.py"), "filtrar_recintos")
+_mod_col = _load_module(os.path.join(BASE, "colegios",   "filtrar_colegios.py"),      "filtrar_colegios")
+_mod_rec = _load_module(os.path.join(BASE, "recintos",   "filtrar_recintos.py"),      "filtrar_recintos")
+_mod_hos = _load_module(os.path.join(BASE, "hospitales", "parametrizar_hospitales.py"), "parametrizar_hospitales")
 
 # ---------------------------------------------------------------------------
 # Escenarios de recursos humanos
@@ -282,6 +285,79 @@ def calcular_cobertura(
 
 
 # ---------------------------------------------------------------------------
+# Hospitales (conjunto K)
+# ---------------------------------------------------------------------------
+
+def cargar_hospitales(dias: int = 7) -> list[dict]:
+    """
+    Regenera hospitales_parametrizados.csv y lo carga.
+
+    Retorna lista de dicts:
+        id, nombre, comuna, lat, lon, camas_base, altitud, categoria,
+        cap=[Cap_1 .. Cap_dias]
+    Ver Datos/parametros/capacidad_hospitalaria.md.
+    """
+    _mod_hos.main()          # regenera el CSV si cambia el origen
+    hospitales: list[dict] = []
+    with open(HOSPITALES_CSV, encoding="utf-8-sig", newline="") as f:
+        for row in csv.DictReader(f):
+            hospitales.append(dict(
+                id=int(row["id"]),
+                nombre=row["nombre"],
+                comuna=row["comuna"],
+                lat=float(row["lat"]),
+                lon=float(row["lon"]),
+                camas_base=int(row["Camas2023"]),
+                altitud=float(row["Altitud_m"]),
+                categoria=row["categoria"],
+                cap=[int(row[f"Cap_{t}"]) for t in range(1, dias + 1)],
+            ))
+    return hospitales
+
+
+def calcular_tiempos_hospitales(
+    comunas: list[dict],
+    hospitales: list[dict],
+    factor_vial: float = 1.35,
+    vel_kmh: float = 25,
+) -> dict[tuple[int, int], int]:
+    """Retorna {(i_id, k_id): minutos} para cada par comuna–hospital."""
+    return {
+        (i["id"], k["id"]): tiempo_min(i["lat"], i["lon"], k["lat"], k["lon"],
+                                        factor_vial, vel_kmh)
+        for i in comunas
+        for k in hospitales
+    }
+
+
+def calcular_cobertura_hospitales(
+    comunas: list[dict],
+    hospitales: list[dict],
+) -> dict[tuple[int, int], int]:
+    """
+    Retorna {(i_id, k_id): 1|0} usando criterio de colindancia comunal.
+
+    A_{i,k} = 1  si  comuna(k) == comuna(i)  O  comuna(k) ∈ adj[comuna(i)]
+
+    Supuesto del modelo E2 (sección 1.5): "un centro puede atender a una zona
+    si se encuentra en la misma comuna o en una comuna colindante."
+    Ver Datos/colindancia.json y Datos/parametros/capacidad_hospitalaria.md.
+    """
+    with open(COLINDANCIA_JSON, encoding="utf-8") as f:
+        adj_raw: dict[str, list[str]] = json.load(f)
+    adj = {normalize(k): {normalize(v) for v in vs} for k, vs in adj_raw.items()}
+
+    cobertura: dict[tuple[int, int], int] = {}
+    for i in comunas:
+        nom_i = normalize(i["nombre"])
+        vecinos_i = adj.get(nom_i, set()) | {nom_i}
+        for k in hospitales:
+            nom_k = normalize(k["comuna"])
+            cobertura[(i["id"], k["id"])] = 1 if nom_k in vecinos_i else 0
+    return cobertura
+
+
+# ---------------------------------------------------------------------------
 # Demanda
 # ---------------------------------------------------------------------------
 
@@ -390,6 +466,9 @@ def escribir_csvs(
     cobertura: dict,
     demanda: dict,
     params: dict,
+    hospitales: list[dict] | None = None,
+    tiempos_ik: dict | None = None,
+    cobertura_ik: dict | None = None,
 ) -> None:
     """Escribe todos los CSVs en output_dir con los nombres del modelo E2."""
     os.makedirs(output_dir, exist_ok=True)
@@ -457,6 +536,28 @@ def escribir_csvs(
       ["parametro", "valor", "unidad", "descripcion"],
       param_rows)
 
+    # --- Hospitales (conjunto K) ---
+    if hospitales is not None:
+        dias = params["horizonte_dias"]
+        cap_cols = [f"Cap_{t}" for t in range(1, dias + 1)]
+        w("nodos_hospitales.csv",
+          ["k", "nombre", "comuna", "lat", "lon",
+           "camas_base", "altitud", "categoria"] + cap_cols,
+          [(h["id"], h["nombre"], h["comuna"],
+            round(h["lat"], 6), round(h["lon"], 6),
+            h["camas_base"], h["altitud"], h["categoria"],
+            *h["cap"]) for h in hospitales])
+
+    if tiempos_ik is not None:
+        w("tiempos_ik.csv",
+          ["i", "k", "minutos"],
+          [(i, k, m) for (i, k), m in sorted(tiempos_ik.items())])
+
+    if cobertura_ik is not None:
+        w("cobertura_ik.csv",
+          ["i", "k", "A_ik"],
+          [(i, k, a) for (i, k), a in sorted(cobertura_ik.items())])
+
     print(f"\nArchivos generados en: {output_dir}")
     for fn in sorted(os.listdir(output_dir)):
         with open(os.path.join(output_dir, fn), encoding="utf-8") as f:
@@ -517,8 +618,21 @@ def main(
     print(f"── Generando parámetros (escenario={escenario})...")
     params = generar_parametros_escalares(centros, escenario=escenario)
 
+    print("── Cargando hospitales (conjunto K)...")
+    hospitales = cargar_hospitales()
+    print(f"   {len(hospitales)} hospitales cargados")
+
+    print("── Calculando tiempos hospitales (Haversine)...")
+    tiempos_ik = calcular_tiempos_hospitales(comunas, hospitales)
+
+    print("── Calculando cobertura hospitales (colindancia comunal)...")
+    cobertura_ik = calcular_cobertura_hospitales(comunas, hospitales)
+    n_cub_k = sum(v for v in cobertura_ik.values())
+    print(f"   {n_cub_k}/{len(cobertura_ik)} pares cubiertos (misma comuna o colindante)")
+
     print("── Escribiendo CSVs...")
-    escribir_csvs(DATA_DIR, comunas, centros, tiempos, cobertura, demanda, params)
+    escribir_csvs(DATA_DIR, comunas, centros, tiempos, cobertura, demanda, params,
+                  hospitales=hospitales, tiempos_ik=tiempos_ik, cobertura_ik=cobertura_ik)
 
 
 if __name__ == "__main__":
