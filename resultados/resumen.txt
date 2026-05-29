@@ -3,27 +3,27 @@ RESULTADOS — Modelo PMA Valparaíso
 ============================================================
 
 Estado del solver : 2 (Óptimo)
-Función objetivo  : 33.00  (pacientes-día ponderados en espera)
+Función objetivo  : 2533.00  (pacientes-día ponderados en espera)
 MIP Gap           : 0.00%
 Tiempo de cómputo : 0.1 s
 
 ────────────────────────────────────────────────────────────
  Día  Centros  Equipos  Atendidos  Espera L  Espera M
 ────────────────────────────────────────────────────────────
-   1        1       10        300        33         0
-   2        1        7        114         0         0
-   3        1        7          0         0         0
-   4        0        0          0         0         0
-   5        0        0          0         0         0
-   6        0        0          0         0         0
-   7        0        0          0         0         0
+   1        1       10        300       947         0
+   2        2       17        510      1190         0
+   3        4       29        870       396         0
+   4        5       41        304         0         0
+   5        6       49        186         0         0
+   6        6       55         70         0         0
+   7        6       59         54         0         0
 ────────────────────────────────────────────────────────────
 
 Centros activos por día:
-  Día 1: j2=COLEGIO VILLA ACONCAGUA
-  Día 2: j2=COLEGIO VILLA ACONCAGUA
-  Día 3: j2=COLEGIO VILLA ACONCAGUA
-  Día 4: (ninguno)
-  Día 5: (ninguno)
-  Día 6: (ninguno)
-  Día 7: (ninguno)
+  Día 1: j5=COLEGIO SALESIANO VALPARAISO
+  Día 2: j5=COLEGIO SALESIANO VALPARAISO, j15=Estadio Municipal Ítalo Composto Scarpatti
+  Día 3: j5=COLEGIO SALESIANO VALPARAISO, j10=COLEGIO ALEMAN DE VALPARAISO, j15=Estadio Municipal Ítalo Composto Scarpatti, j18=Estadio Municipal Arturo Longton Guerrero
+  Día 4: j6=LICEO EDUARDO DE LA BARRA, j10=COLEGIO ALEMAN DE VALPARAISO, j14=Complejo Deportivo Bernardo O'Higgins, j15=Estadio Municipal Ítalo Composto Scarpatti, j18=Estadio Municipal Arturo Longton Guerrero
+  Día 5: j4=COLEGIO LOS REYES, j6=LICEO EDUARDO DE LA BARRA, j10=COLEGIO ALEMAN DE VALPARAISO, j14=Complejo Deportivo Bernardo O'Higgins, j15=Estadio Municipal Ítalo Composto Scarpatti, j18=Estadio Municipal Arturo Longton Guerrero
+  Día 6: j4=COLEGIO LOS REYES, j6=LICEO EDUARDO DE LA BARRA, j10=COLEGIO ALEMAN DE VALPARAISO, j14=Complejo Deportivo Bernardo O'Higgins, j15=Estadio Municipal Ítalo Composto Scarpatti, j18=Estadio Municipal Arturo Longton Guerrero
+  Día 7: j4=COLEGIO LOS REYES, j6=LICEO EDUARDO DE LA BARRA, j10=COLEGIO ALEMAN DE VALPARAISO, j14=Complejo Deportivo Bernardo O'Higgins, j15=Estadio Municipal Ítalo Composto Scarpatti, j18=Estadio Municipal Arturo Longton Guerrero

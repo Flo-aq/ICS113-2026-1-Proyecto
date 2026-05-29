@@ -112,7 +112,7 @@ def cargar_datos(data_dir: str) -> dict:
 # Construcción del modelo
 # ---------------------------------------------------------------------------
 
-def construir_modelo(d: dict) -> tuple:
+def construir_modelo(d: dict, escenario_base=False) -> tuple:
     """
     Construye y retorna el modelo Gurobi junto con las variables de decisión.
 
@@ -136,6 +136,11 @@ def construir_modelo(d: dict) -> tuple:
 
     # ── Variables binarias de activación ──────────────────────────────────
     z = m.addVars(J, T, vtype=GRB.BINARY, name="z")   # activo
+    # Caso base: prohibir apertura de PMAs
+    if escenario_base:
+        for j in J:
+            for t in T:
+                z[j, t].ub = 0
     v = m.addVars(J, T, vtype=GRB.BINARY, name="v")   # abre
     c = m.addVars(J, T, vtype=GRB.BINARY, name="c")   # cierra
 
@@ -269,7 +274,7 @@ def construir_modelo(d: dict) -> tuple:
                 p[j, t] <= d["H_t"][t] * z[j, t],
                 name=f"eq_cerrado_j{j}_t{t}"
             )
-    
+
     #    8b. a_{i,j,t,g} ≤ A_{ij} · D_ig_max  (solo asignar si hay cobertura)
     for i in I:
         for j in J:
@@ -428,7 +433,7 @@ def main():
     print(f"   Presupuesto: CLP {d['Pres']:,.0f}")
 
     print("\n── Construyendo modelo Gurobi...")
-    m, vars_ = construir_modelo(d)
+    m, vars_ = construir_modelo(d, escenario_base=False)
 
     nvars  = m.NumVars
     nconst = m.NumConstrs

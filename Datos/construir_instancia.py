@@ -363,7 +363,7 @@ def calcular_cobertura_hospitales(
 
 def calcular_demanda(
     comunas: list[dict],
-    tau: float = 0.005,
+    tau: float = 0.009,
     prop: dict[str, float] | None = None,
     phi: list[float] | None = None,
     dias: int = 7,
@@ -410,7 +410,7 @@ def generar_parametros_escalares(
     escenario: int = 2,
     t_max: int = 30,
     l_min: int = 3,
-    tau: float = 0.005,
+    tau: float = 0.009,
     prop: dict[str, float] | None = None,
     phi: list[float] | None = None,
     dias: int = 7,
