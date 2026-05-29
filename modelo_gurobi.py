@@ -262,6 +262,14 @@ def construir_modelo(d: dict) -> tuple:
                 name=f"req_min_j{j}_t{t}"
             )
 
+    #   8a bis. p_{j,t} ≤ H_t · z_{j,t}  (no asignar equipos si el centro está cerrado, y no exceder el total disponible)
+    for j in J:
+        for t in T:
+            m.addConstr(
+                p[j, t] <= d["H_t"][t] * z[j, t],
+                name=f"eq_cerrado_j{j}_t{t}"
+            )
+    
     #    8b. a_{i,j,t,g} ≤ A_{ij} · D_ig_max  (solo asignar si hay cobertura)
     for i in I:
         for j in J:
