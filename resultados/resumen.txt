@@ -1,0 +1,29 @@
+============================================================
+RESULTADOS — Modelo PMA Valparaíso
+============================================================
+
+Estado del solver : 2 (Óptimo)
+Función objetivo  : 12298.50  (pacientes-día ponderados en espera)
+MIP Gap           : 0.00%
+Tiempo de cómputo : 0.2 s
+
+────────────────────────────────────────────────────────────
+ Día  Centros  Equipos  Atendidos  Espera L  Espera M
+────────────────────────────────────────────────────────────
+   1        1       10        120       877       188
+   2        2       17        204      1579       230
+   3        3       29        348      2106        67
+   4        5       41        909      1833         0
+   5        6       49       1284      1023         0
+   6        5       55       1466        30         0
+   7        5       59        410         0         0
+────────────────────────────────────────────────────────────
+
+Centros activos por día:
+  Día 1: j12=Gimnasio Polideportivo de Viña del Mar
+  Día 2: j12=Gimnasio Polideportivo de Viña del Mar, j18=Estadio Municipal Arturo Longton Guerrero
+  Día 3: j12=Gimnasio Polideportivo de Viña del Mar, j16=Estadio Atlético Municipal de Concón, j18=Estadio Municipal Arturo Longton Guerrero
+  Día 4: j3=COLEGIO ACONCAGUA, j12=Gimnasio Polideportivo de Viña del Mar, j14=Complejo Deportivo Bernardo O'Higgins, j16=Estadio Atlético Municipal de Concón, j18=Estadio Municipal Arturo Longton Guerrero
+  Día 5: j3=COLEGIO ACONCAGUA, j12=Gimnasio Polideportivo de Viña del Mar, j14=Complejo Deportivo Bernardo O'Higgins, j16=Estadio Atlético Municipal de Concón, j17=Gimnasio Municipal Quilpué, j18=Estadio Municipal Arturo Longton Guerrero
+  Día 6: j3=COLEGIO ACONCAGUA, j12=Gimnasio Polideportivo de Viña del Mar, j14=Complejo Deportivo Bernardo O'Higgins, j16=Estadio Atlético Municipal de Concón, j17=Gimnasio Municipal Quilpué
+  Día 7: j3=COLEGIO ACONCAGUA, j12=Gimnasio Polideportivo de Viña del Mar, j14=Complejo Deportivo Bernardo O'Higgins, j16=Estadio Atlético Municipal de Concón, j17=Gimnasio Municipal Quilpué
