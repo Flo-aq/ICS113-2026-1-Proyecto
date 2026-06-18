@@ -75,7 +75,7 @@ FO = 64.408 · Tasa leve 77,7% · Tasa mod 97,6% · Runtime 23 s
 
 ---
 
-### T30_H150
+### T30_H150 - optimizado
 
 FO = 50.178 · Tasa leve 99,8% · Tasa mod 99,6% · Runtime 23 s
 
