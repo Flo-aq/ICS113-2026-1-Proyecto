@@ -1,0 +1,29 @@
+======================================================================
+RESULTADOS - Modelo PMA Valparaiso
+======================================================================
+
+Estado del solver : 2 (Optimo)
+Funcion objetivo  : 59063.18
+MIP Gap           : 0.00%
+Tiempo de computo : 13.1 s
+
+----------------------------------------------------------------------
+ Dia  Centros  Equipos   Atend.   Esp.L   Esp.M  GravHosp  GravPMA
+----------------------------------------------------------------------
+   1        5       24      288    2688     654       403        0
+   2        7       40      480    4839     932       321        0
+   3       12       69      858    6401     694       244        0
+   4       16       97     1259    7498      84       196        0
+   5       19      116     2807    6173      56       165        0
+   6       19      130     3244    4394      39       161        0
+   7       15      140     3704    1856      35       124        0
+----------------------------------------------------------------------
+
+Centros activos por dia:
+  Dia 1: j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j76=Estadio Municipal Ítalo Composto Scarpatti, j79=Gimnasio Municipal Quilpué, j83=Estadio Municipal Arturo Longton Guerrero
+  Dia 2: j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j37=COLEGIO ALEMAN DE SAN FELIPE, j76=Estadio Municipal Ítalo Composto Scarpatti, j79=Gimnasio Municipal Quilpué, j81=Estadio Municipal Fernando Ross Marchessi, j83=Estadio Municipal Arturo Longton Guerrero
+  Dia 3: j3=COLEGIO EDUPAC, j16=COLEGIO VILLA ACONCAGUA, j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j28=COLEGIO NACIONAL, j37=COLEGIO ALEMAN DE SAN FELIPE, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j76=Estadio Municipal Ítalo Composto Scarpatti, j78=Estadio Municipal Raúl Vargas Verdejo, j79=Gimnasio Municipal Quilpué, j81=Estadio Municipal Fernando Ross Marchessi, j83=Estadio Municipal Arturo Longton Guerrero
+  Dia 4: j3=COLEGIO EDUPAC, j16=COLEGIO VILLA ACONCAGUA, j20=ESCUELA BASICA LAS CRUCES, j22=LICEO MUNICIPAL LUIS LABORDA, j28=COLEGIO NACIONAL, j37=COLEGIO ALEMAN DE SAN FELIPE, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j63=COLEGIO SALESIANO VALPARAISO, j70=COLEGIO PARROQUIAL FRANCISCO DIDIER, j73=Estadio Elías Figueroa Brander, j76=Estadio Municipal Ítalo Composto Scarpatti, j78=Estadio Municipal Raúl Vargas Verdejo, j79=Gimnasio Municipal Quilpué, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi, j83=Estadio Municipal Arturo Longton Guerrero
+  Dia 5: j3=COLEGIO EDUPAC, j5=COLEGIO BECARB II, j10=ESCUELA PRESIDENTE AGUIRRE CERDA, j16=COLEGIO VILLA ACONCAGUA, j20=ESCUELA BASICA LAS CRUCES, j22=LICEO MUNICIPAL LUIS LABORDA, j28=COLEGIO NACIONAL, j52=LICEO PARROQUIAL TERESITA DE LOS ANDES, j58=COLEGIO ALONSO DE ERCILLA, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j63=COLEGIO SALESIANO VALPARAISO, j67=LICEO PARROQUIAL SAN ANTONIO, j70=COLEGIO PARROQUIAL FRANCISCO DIDIER, j73=Estadio Elías Figueroa Brander, j76=Estadio Municipal Ítalo Composto Scarpatti, j77=Estadio Atlético Municipal de Concón, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín, j83=Estadio Municipal Arturo Longton Guerrero
+  Dia 6: j3=COLEGIO EDUPAC, j5=COLEGIO BECARB II, j10=ESCUELA PRESIDENTE AGUIRRE CERDA, j16=COLEGIO VILLA ACONCAGUA, j20=ESCUELA BASICA LAS CRUCES, j22=LICEO MUNICIPAL LUIS LABORDA, j28=COLEGIO NACIONAL, j52=LICEO PARROQUIAL TERESITA DE LOS ANDES, j58=COLEGIO ALONSO DE ERCILLA, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j63=COLEGIO SALESIANO VALPARAISO, j67=LICEO PARROQUIAL SAN ANTONIO, j70=COLEGIO PARROQUIAL FRANCISCO DIDIER, j73=Estadio Elías Figueroa Brander, j76=Estadio Municipal Ítalo Composto Scarpatti, j77=Estadio Atlético Municipal de Concón, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín, j83=Estadio Municipal Arturo Longton Guerrero
+  Dia 7: j3=COLEGIO EDUPAC, j5=COLEGIO BECARB II, j10=ESCUELA PRESIDENTE AGUIRRE CERDA, j16=COLEGIO VILLA ACONCAGUA, j20=ESCUELA BASICA LAS CRUCES, j22=LICEO MUNICIPAL LUIS LABORDA, j28=COLEGIO NACIONAL, j52=LICEO PARROQUIAL TERESITA DE LOS ANDES, j58=COLEGIO ALONSO DE ERCILLA, j67=LICEO PARROQUIAL SAN ANTONIO, j73=Estadio Elías Figueroa Brander, j76=Estadio Municipal Ítalo Composto Scarpatti, j77=Estadio Atlético Municipal de Concón, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín

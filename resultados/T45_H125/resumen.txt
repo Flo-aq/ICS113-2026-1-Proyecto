@@ -1,0 +1,29 @@
+======================================================================
+RESULTADOS - Modelo PMA Valparaiso
+======================================================================
+
+Estado del solver : 2 (Optimo)
+Funcion objetivo  : 61763.68
+MIP Gap           : 0.00%
+Tiempo de computo : 74.1 s
+
+----------------------------------------------------------------------
+ Dia  Centros  Equipos   Atend.   Esp.L   Esp.M  GravHosp  GravPMA
+----------------------------------------------------------------------
+   1        4       24      288    2688     654       403        0
+   2        7       40      480    4839     932       321        0
+   3       12       69      880    6360     714       244        0
+   4       18       97     1241    7420     158       196        0
+   5       21      116     2687    6234     111       165        0
+   6       20      130     3101    4611      80       161        0
+   7       16      140     3575    2215      63       124        0
+----------------------------------------------------------------------
+
+Centros activos por dia:
+  Dia 1: j72=Gimnasio Polideportivo de Viña del Mar, j76=Estadio Municipal Ítalo Composto Scarpatti, j81=Estadio Municipal Fernando Ross Marchessi, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 2: j20=ESCUELA BASICA LAS CRUCES, j22=LICEO MUNICIPAL LUIS LABORDA, j63=COLEGIO SALESIANO VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j76=Estadio Municipal Ítalo Composto Scarpatti, j81=Estadio Municipal Fernando Ross Marchessi, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 3: j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j20=ESCUELA BASICA LAS CRUCES, j22=LICEO MUNICIPAL LUIS LABORDA, j35=COLEGIO PART. IGNACIO CARRERA PINTO, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j63=COLEGIO SALESIANO VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j76=Estadio Municipal Ítalo Composto Scarpatti, j78=Estadio Municipal Raúl Vargas Verdejo, j79=Gimnasio Municipal Quilpué, j81=Estadio Municipal Fernando Ross Marchessi, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 4: j3=COLEGIO EDUPAC, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j20=ESCUELA BASICA LAS CRUCES, j22=LICEO MUNICIPAL LUIS LABORDA, j26=ESCUELA GABRIELA MISTRAL, j35=COLEGIO PART. IGNACIO CARRERA PINTO, j37=COLEGIO ALEMAN DE SAN FELIPE, j44=COLEGIO CERVANTINO, j52=LICEO PARROQUIAL TERESITA DE LOS ANDES, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j63=COLEGIO SALESIANO VALPARAISO, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j76=Estadio Municipal Ítalo Composto Scarpatti, j78=Estadio Municipal Raúl Vargas Verdejo, j79=Gimnasio Municipal Quilpué, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi
+  Dia 5: j3=COLEGIO EDUPAC, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j20=ESCUELA BASICA LAS CRUCES, j26=ESCUELA GABRIELA MISTRAL, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j28=COLEGIO NACIONAL, j33=COLEGIO SANTA ISABEL, j35=COLEGIO PART. IGNACIO CARRERA PINTO, j37=COLEGIO ALEMAN DE SAN FELIPE, j44=COLEGIO CERVANTINO, j52=LICEO PARROQUIAL TERESITA DE LOS ANDES, j54=COLEGIO ESPIRITU SANTO, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j64=LICEO EDUARDO DE LA BARRA, j68=COLEGIO ALEMAN DE VALPARAISO, j76=Estadio Municipal Ítalo Composto Scarpatti, j77=Estadio Atlético Municipal de Concón, j78=Estadio Municipal Raúl Vargas Verdejo, j79=Gimnasio Municipal Quilpué, j80=Estadio Municipal Arturo Echazarreta Larraín, j82=Estadio Municipal Eugenio Castro González
+  Dia 6: j3=COLEGIO EDUPAC, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j20=ESCUELA BASICA LAS CRUCES, j26=ESCUELA GABRIELA MISTRAL, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j28=COLEGIO NACIONAL, j33=COLEGIO SANTA ISABEL, j37=COLEGIO ALEMAN DE SAN FELIPE, j44=COLEGIO CERVANTINO, j52=LICEO PARROQUIAL TERESITA DE LOS ANDES, j54=COLEGIO ESPIRITU SANTO, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j64=LICEO EDUARDO DE LA BARRA, j68=COLEGIO ALEMAN DE VALPARAISO, j76=Estadio Municipal Ítalo Composto Scarpatti, j77=Estadio Atlético Municipal de Concón, j78=Estadio Municipal Raúl Vargas Verdejo, j79=Gimnasio Municipal Quilpué, j80=Estadio Municipal Arturo Echazarreta Larraín, j82=Estadio Municipal Eugenio Castro González
+  Dia 7: j3=COLEGIO EDUPAC, j20=ESCUELA BASICA LAS CRUCES, j26=ESCUELA GABRIELA MISTRAL, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j28=COLEGIO NACIONAL, j33=COLEGIO SANTA ISABEL, j52=LICEO PARROQUIAL TERESITA DE LOS ANDES, j54=COLEGIO ESPIRITU SANTO, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j64=LICEO EDUARDO DE LA BARRA, j68=COLEGIO ALEMAN DE VALPARAISO, j76=Estadio Municipal Ítalo Composto Scarpatti, j77=Estadio Atlético Municipal de Concón, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín, j82=Estadio Municipal Eugenio Castro González

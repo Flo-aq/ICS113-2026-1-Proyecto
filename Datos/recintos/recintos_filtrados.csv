@@ -1,9 +1,16 @@
 id,nombre,comuna,lat,lon,cap_j,f_j,o_j,req_j
-1,Estadio Sausalito,Viña del Mar,-33.0204,-71.5378,18002,348038667,37204133,37
-2,Gimnasio Polideportivo de Viña del Mar,Viña del Mar,-33.0158,-71.5353,3371,65172667,6966733,7
-3,Estadio Elías Figueroa Brander,Valparaíso,-33.022,-71.64,20575,397783333,42521667,42
-4,Complejo Deportivo Bernardo O'Higgins,Valparaíso,-33.058611,-71.595,4000,77333333,8266667,8
-7,Estadio Municipal Ítalo Composto Scarpatti,Villa Alemana,-33.0336,-71.3719,3500,67666667,7233333,7
-11,Estadio Atlético Municipal de Concón,Concón,-33.0333,-71.4167,3000,58000000,6200000,6
-15,Gimnasio Municipal Quilpué,Quilpué,-33.04,-71.43,1400,27066667,2893333,3
-24,Estadio Municipal Arturo Longton Guerrero,Quilpué,-33.058056,-71.458333,1500,29000000,3100000,3
+1,Estadio Sausalito,Viña del Mar,-33.0204,-71.5378,1999,38647333,4131267,4
+2,Gimnasio Polideportivo de Viña del Mar,Viña del Mar,-33.0158,-71.5353,334,6457333,690267,3
+3,Estadio Elías Figueroa Brander,Valparaíso,-33.022,-71.64,1326,25636000,2740400,3
+4,Complejo Deportivo Bernardo O'Higgins,Valparaíso,-33.058611,-71.595,1780,34413333,3678667,4
+5,Estadio Municipal Lucio Fariña Fernández,Quillota,-32.8875,-71.2428,1326,25636000,2740400,3
+7,Estadio Municipal Ítalo Composto Scarpatti,Villa Alemana,-33.0336,-71.3719,1002,19372000,2070800,3
+11,Estadio Atlético Municipal de Concón,Concón,-33.0333,-71.4167,2103,40658000,4346200,5
+12,Estadio Municipal Raúl Vargas Verdejo,Quintero,-32.798889,-71.528889,1326,25636000,2740400,3
+15,Gimnasio Municipal Quilpué,Quilpué,-33.04,-71.43,78,1508000,161200,3
+18,Estadio Municipal Arturo Echazarreta Larraín,Casablanca,-33.3172,-71.4103,1326,25636000,2740400,3
+19,Estadio Municipal Fernando Ross Marchessi,Cartagena,-33.540556,-71.600833,1326,25636000,2740400,3
+20,Estadio Municipal Eugenio Castro González,El Quisco,-33.398531,-71.688125,1326,25636000,2740400,3
+24,Estadio Municipal Arturo Longton Guerrero,Quilpué,-33.058056,-71.458333,1326,25636000,2740400,3
+27,Estadio Municipal Ángel Navarrete Candia,Limache,-32.9968,-71.2682,1326,25636000,2740400,3
+28,Estadio Municipal Gustavo Ocaranza,Limache,-33.0122,-71.2576,1326,25636000,2740400,3

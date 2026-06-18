@@ -2,8 +2,10 @@
 Filtra los recintos deportivos operativos (estadios, polideportivos) por comunas
 y los prepara como centros candidatos de triaje para el modelo de optimización.
 
-La capacidad cap_j se toma directamente de la columna Capacidad_Personas del CSV,
-ya que los recintos deportivos tienen aforo certificado (no requiere estimación normativa).
+La capacidad cap_j se estima a partir del área de cancha deportiva (columna
+Area_Cancha_m2 del CSV) usando la misma fórmula normativa que los colegios:
+cap_j = floor(Area_Cancha_m2 × FACTOR_USO_REFUGIO / M2_POR_PERSONA).
+Ver Datos/parametros/capacidad_recintos_deportivos.md.
 Los costos (f_j, o_j, req_j) escalan linealmente con cap_j usando tasas de referencia
 para estadios. Ver Datos/parametros/costos_pma.md.
 
@@ -21,6 +23,11 @@ RECINTOS_CSV  = os.path.join(BASE, "infraestructura_deportiva_consolidada.csv")
 SALIDA_CSV    = os.path.join(BASE, "recintos_filtrados.csv")
 
 COLUMNAS_SALIDA = ["id", "nombre", "comuna", "lat", "lon", "cap_j", "f_j", "o_j", "req_j"]
+
+# Parámetros normativos de capacidad — ver Datos/parametros/capacidad_recintos_deportivos.md
+FACTOR_USO_REFUGIO     = 0.65   # OGUC Art. 4.8.2 — igual que filtrar_colegios.py
+M2_POR_PERSONA         = 3.5    # Estándar SPHERE — igual que filtrar_colegios.py
+AREA_CANCHA_DEFECTO_M2 = 7_140  # FIFA estándar 105×68 m (fallback si Area_Cancha_m2 vacío)
 
 # Costos por persona de capacidad — ver Datos/parametros/costos_pma.md
 _CAP_REF  = 3000
@@ -48,16 +55,19 @@ def filtrar_recintos(
     comunas_nombres: list[str] | None = None,
     tipos: list[str] | None = None,
     salida: str = SALIDA_CSV,
+    area_cancha_defecto: float = AREA_CANCHA_DEFECTO_M2,
 ) -> list[dict]:
     """
     Filtra los recintos deportivos operativos y escribe el CSV de salida.
 
     Parámetros
     ----------
-    comunas_nombres  Lista de nombres de comunas (None = todas).
-    tipos            Lista de tipos a incluir, e.g. ["Estadio", "Polideportivo"]
-                     (None = todos los tipos).
-    salida           Ruta del CSV de salida.
+    comunas_nombres       Lista de nombres de comunas (None = todas).
+    tipos                 Lista de tipos a incluir, e.g. ["Estadio", "Polideportivo"]
+                          (None = todos los tipos).
+    salida                Ruta del CSV de salida.
+    area_cancha_defecto   Área de cancha (m²) a usar si la columna Area_Cancha_m2
+                          del CSV está vacía para un recinto.
 
     Retorna
     -------
@@ -86,10 +96,14 @@ def filtrar_recintos(
                 continue
 
             try:
-                lat   = float(row["Coordenada_Lat"].replace(",", "."))
-                lon   = float(row["Coordenada_Lon"].replace(",", "."))
-                cap_j = int(row["Capacidad_Personas"])
+                lat = float(row["Coordenada_Lat"].replace(",", "."))
+                lon = float(row["Coordenada_Lon"].replace(",", "."))
+                area_str = row.get("Area_Cancha_m2", "").strip()
+                area = float(area_str) if area_str else area_cancha_defecto
+                cap_j = math.floor(area * FACTOR_USO_REFUGIO / M2_POR_PERSONA)
             except (ValueError, KeyError):
+                continue
+            if cap_j <= 0:
                 continue
 
             f_j, o_j, req_j = _params_estadio(cap_j)
@@ -111,7 +125,7 @@ def filtrar_recintos(
         writer.writeheader()
         writer.writerows(recintos)
 
-    print(f"Recintos escritos : {len(recintos)} → {salida}")
+    print(f"Recintos escritos : {len(recintos)} -> {salida}")
     if recintos:
         por_tipo = Counter(row.get("Tipo_Recinto", "?") for row in
                            csv.DictReader(open(RECINTOS_CSV, encoding="utf-8"))

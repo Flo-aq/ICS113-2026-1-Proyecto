@@ -1,14 +1,17 @@
 parametro,valor,unidad,descripcion
-T_max,30,minutos,Tiempo máximo de viaje al PMA
+T_max,60,minutos,Tiempo máximo de viaje al PMA
 L,3,días,Mínimo días de operación continua
-Pres,1200000000,CLP,Presupuesto total red de PMAs 7 días
+Pres,2270000000,CLP,Presupuesto total red de PMAs 7 días
 escenario,2,-,1=conservador 2=intermedio 3=optimista
 tau_total,0.009,por_hab,Heridos/habitante (MMI VIII)
-prop_leve,0.74,proporcion,Fracción heridos leves
-prop_moderado,0.26,proporcion,Fracción heridos moderados
+prop_leve,0.666,proporcion,Fracción heridos leves
+prop_moderado,0.234,proporcion,Fracción heridos moderados
+prop_grave,0.1,proporcion,Fracción heridos graves (categoría START rojo)
 P_leve,1,peso,Peso prioridad leves en FO
 P_moderado,10,peso,Peso prioridad moderados en FO
+c_dist,0.016666666666666666,por_min,Penalización distancia graves a hospital (unidad/min)
+c_pma,50.0,-,Penalización por atender grave en PMA
 ratio_leve,30,pac/EES/día,Pacientes leves por equipo por día
 ratio_moderado,12,pac/EES/día,Pacientes moderados por equipo por día
-factor_vial,1.35,adimensional,Corrección Haversine → distancia real
+factor_vial,1.35,adimensional,Corrección Haversine -> distancia real
 vel_kmh,25,km/h,Velocidad emergencia post-terremoto

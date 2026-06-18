@@ -30,3 +30,13 @@ Algarrobo,20542,1.1%,52,"Centro, El Quisco límite, San Antonio límite",No disp
 Santo Domingo,6542,0.3%,6,"Centro, Algarrobo límite",No disponible,INE Censo 2024 / BCN,Costero pequeño; dispersión muy baja
 Isla de Pascua,8035,0.4%,35,"Hanga Roa, Anakena, Hanga Roa centro",No disponible,INE Censo 2024,Insular; población joven (IE ~39.2); aislamiento geográfico
 Juan Fernández,843,<0.1%,2.5,San Juan Bautista,No disponible,INE Censo 2024,Archipiélago; población mínima; aislamiento extremo
+Calera,20112,1.1%,,Interior-Quillota,,INE Censo 2024,Nota: coexiste entrada La Calera (57163) con nombre alternativo; se usa Calera para match comunas.json
+Calle Larga,16597,0.9%,,Los Andes,,INE Censo 2024,
+Catemu,13760,0.7%,,San Felipe,,INE Censo 2024,
+Hijuelas,19286,1.0%,,Quillota,,INE Censo 2024,
+La Cruz,24939,1.3%,,Quillota,,INE Censo 2024,
+Llaillay,25484,1.3%,,San Felipe,,INE Censo 2024,Nota: coexiste entrada Llay Llay (17542) con ortografía alternativa; se usa Llaillay para match comunas.json
+Panquehue,7269,0.4%,,San Felipe,,INE Censo 2024,
+Rinconada,11855,0.6%,,Los Andes,,INE Censo 2024,
+San Esteban,20112,1.1%,,Los Andes,,INE Censo 2024,
+Santa Maria,15134,0.8%,,San Felipe,,INE Censo 2024,

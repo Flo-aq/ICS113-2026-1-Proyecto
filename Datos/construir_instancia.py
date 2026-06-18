@@ -49,26 +49,32 @@ _mod_col = _load_module(os.path.join(BASE, "colegios",   "filtrar_colegios.py"),
 _mod_rec = _load_module(os.path.join(BASE, "recintos",   "filtrar_recintos.py"),      "filtrar_recintos")
 _mod_hos = _load_module(os.path.join(BASE, "hospitales", "parametrizar_hospitales.py"), "parametrizar_hospitales")
 
+# Área de cancha por defecto (FIFA estándar 105×68 m) para recintos sin Area_Cancha_m2 en CSV
+# Ver Datos/parametros/capacidad_recintos_deportivos.md
+AREA_CANCHA_DEFECTO_M2 = 7_140
+
 # ---------------------------------------------------------------------------
 # Escenarios de recursos humanos
 # Ver Datos/parametros/personal_y_capacidad.md
 # ---------------------------------------------------------------------------
+# Escenarios escalados para 36 comunas continentales Región 5 (factor 1.892x vs 5 comunas originales)
+# H_t y MaxC_t × 1.892; ratio_leve/moderado no cambian (son por equipo, no totales)
 _ESCENARIOS = {
-    1: dict(  # conservador (fuente: research_claude.md)
-        H_t=[8, 12, 18, 24, 26, 28, 28],
-        MaxC_t=[4, 5, 7, 8, 9, 10, 10],
+    1: dict(  # conservador
+        H_t=[15, 23, 34, 45, 49, 53, 53],
+        MaxC_t=[8, 9, 13, 15, 17, 19, 19],
         ratio_leve=25,
         ratio_moderado=10,
     ),
-    2: dict(  # intermedio — default
-        H_t=[10, 17, 29, 41, 49, 55, 59],
-        MaxC_t=[2, 4, 6, 8, 10, 10, 10],
+    2: dict(  # intermedio — default (36 comunas, escala 1.892x)
+        H_t=[19, 32, 55, 78, 93, 104, 112],
+        MaxC_t=[4, 8, 11, 15, 19, 19, 19],
         ratio_leve=30,
         ratio_moderado=12,
     ),
-    3: dict(  # optimista (fuente: research_gemini.md)
-        H_t=[12, 22, 40, 58, 72, 82, 90],
-        MaxC_t=[2, 4, 6, 10, 14, 16, 16],
+    3: dict(  # optimista
+        H_t=[23, 42, 76, 110, 136, 155, 170],
+        MaxC_t=[4, 8, 11, 19, 26, 30, 30],
         ratio_leve=96,
         ratio_moderado=36,
     ),
@@ -217,7 +223,10 @@ def cargar_centros(
         n=n_colegios, min_matricula=min_mat, holgura=holgura,
         comunas_nombres=nombres,
     )
-    _mod_rec.filtrar_recintos(comunas_nombres=nombres)
+    _mod_rec.filtrar_recintos(
+        comunas_nombres=nombres,
+        area_cancha_defecto=AREA_CANCHA_DEFECTO_M2,
+    )
 
     centros: list[dict] = []
 
@@ -376,7 +385,7 @@ def calcular_demanda(
     mediante ajuste de decimales.
     """
     if prop is None:
-        prop = {"leve": 0.74, "moderado": 0.26}
+        prop = {"leve": 0.666, "moderado": 0.234, "grave": 0.10}
     if phi is None:
         phi = [0.25, 0.20, 0.15, 0.12, 0.10, 0.10, 0.08]
 
@@ -416,6 +425,8 @@ def generar_parametros_escalares(
     dias: int = 7,
     pres: int | None = None,
     p_g: dict[str, int] | None = None,
+    c_dist: float = 1 / 60,
+    c_pma: float = 50.0,
 ) -> dict:
     """
     Genera el diccionario de parámetros escalares listos para el modelo.
@@ -425,13 +436,13 @@ def generar_parametros_escalares(
     pres        Presupuesto total CLP. None → 1,200,000,000 CLP (Gemini).
     """
     if prop is None:
-        prop = {"leve": 0.74, "moderado": 0.26}
+        prop = {"leve": 0.666, "moderado": 0.234, "grave": 0.10}
     if phi is None:
         phi = [0.25, 0.20, 0.15, 0.12, 0.10, 0.10, 0.08]
     if p_g is None:
         p_g = {"leve": 1, "moderado": 10}
     if pres is None:
-        pres = 1_200_000_000
+        pres = 2_270_000_000  # escalado 1.892x para 36 comunas (original 1.2B para 5 comunas)
 
     esc = _ESCENARIOS[escenario]
 
@@ -440,6 +451,8 @@ def generar_parametros_escalares(
         L=l_min,
         Pres=pres,
         horizonte_dias=dias,
+        c_dist=c_dist,
+        c_pma=c_pma,
         escenario=escenario,
         tau_total=tau,
         prop=prop,
@@ -523,14 +536,17 @@ def escribir_csvs(
         ("Pres",          params["Pres"],           "CLP",        "Presupuesto total red de PMAs 7 días"),
         ("escenario",     params["escenario"],      "-",          "1=conservador 2=intermedio 3=optimista"),
         ("tau_total",     params["tau_total"],      "por_hab",    "Heridos/habitante (MMI VIII)"),
-        ("prop_leve",     params["prop"]["leve"],   "proporcion", "Fracción heridos leves"),
-        ("prop_moderado", params["prop"]["moderado"],"proporcion","Fracción heridos moderados"),
-        ("P_leve",        params["p_g"]["leve"],    "peso",       "Peso prioridad leves en FO"),
-        ("P_moderado",    params["p_g"]["moderado"],"peso",       "Peso prioridad moderados en FO"),
-        ("ratio_leve",    params["ratio_leve"],     "pac/EES/día","Pacientes leves por equipo por día"),
-        ("ratio_moderado",params["ratio_moderado"], "pac/EES/día","Pacientes moderados por equipo por día"),
-        ("factor_vial",   params["factor_vial"],    "adimensional","Corrección Haversine → distancia real"),
-        ("vel_kmh",       params["vel_kmh"],        "km/h",       "Velocidad emergencia post-terremoto"),
+        ("prop_leve",     params["prop"]["leve"],        "proporcion",  "Fracción heridos leves"),
+        ("prop_moderado", params["prop"]["moderado"],    "proporcion",  "Fracción heridos moderados"),
+        ("prop_grave",    params["prop"].get("grave",0), "proporcion",  "Fracción heridos graves (categoría START rojo)"),
+        ("P_leve",        params["p_g"]["leve"],         "peso",        "Peso prioridad leves en FO"),
+        ("P_moderado",    params["p_g"]["moderado"],     "peso",        "Peso prioridad moderados en FO"),
+        ("c_dist",        params["c_dist"],              "por_min",     "Penalización distancia graves a hospital (unidad/min)"),
+        ("c_pma",         params["c_pma"],               "-",           "Penalización por atender grave en PMA"),
+        ("ratio_leve",    params["ratio_leve"],          "pac/EES/día", "Pacientes leves por equipo por día"),
+        ("ratio_moderado",params["ratio_moderado"],      "pac/EES/día", "Pacientes moderados por equipo por día"),
+        ("factor_vial",   params["factor_vial"],         "adimensional","Corrección Haversine -> distancia real"),
+        ("vel_kmh",       params["vel_kmh"],             "km/h",        "Velocidad emergencia post-terremoto"),
     ]
     w("parametros.csv",
       ["parametro", "valor", "unidad", "descripcion"],
@@ -574,6 +590,7 @@ def main(
     n_colegios: int = 2,
     holgura: float = 0.0,
     escenario: int = 2,
+    t_max: int = 30,
 ) -> None:
     """
     Construye la instancia completa del modelo y escribe todos los CSVs en data/.
@@ -606,17 +623,17 @@ def main(
 
     print("── Calculando tiempos y cobertura...")
     tiempos   = calcular_tiempos(comunas, centros)
-    cobertura = calcular_cobertura(tiempos)
+    cobertura = calcular_cobertura(tiempos, t_max=t_max)
     n_cub = sum(v for v in cobertura.values())
-    print(f"   {n_cub}/{len(cobertura)} pares cubiertos (tiempo ≤ 30 min)")
+    print(f"   {n_cub}/{len(cobertura)} pares cubiertos (tiempo <= {t_max} min)")
 
     print("── Calculando demanda...")
     demanda = calcular_demanda(comunas)
     total_d = sum(demanda.values())
-    print(f"   Demanda total (leve+moderado, {len(set(t for _,t,_ in demanda.keys()))} días): {total_d}")
+    print(f"   Demanda total ({len(set(t for _,t,_ in demanda.keys()))} dias): {total_d}")
 
-    print(f"── Generando parámetros (escenario={escenario})...")
-    params = generar_parametros_escalares(centros, escenario=escenario)
+    print(f"── Generando parametros (escenario={escenario}, t_max={t_max})...")
+    params = generar_parametros_escalares(centros, escenario=escenario, t_max=t_max)
 
     print("── Cargando hospitales (conjunto K)...")
     hospitales = cargar_hospitales()
@@ -636,9 +653,11 @@ def main(
 
 
 if __name__ == "__main__":
-    # IDs de comunas.json: Concón=8, Quilpué=27, Valparaíso=35, Villa Alemana=36, Viña del Mar=37
+    # Todas las comunas continentales de Región 5 (se excluyen ID 12=Isla de Pascua, ID 13=Juan Fernández)
+    COMUNAS_CONTINENTALES = [1,2,3,4,5,6,7,8,9,10,11,14,15,16,17,18,19,20,
+                              21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38]
     main(
-        comunas_ids=[8, 27, 35, 36, 37],
+        comunas_ids=COMUNAS_CONTINENTALES,
         n_colegios=2,
         holgura=0.0,
         escenario=2,
