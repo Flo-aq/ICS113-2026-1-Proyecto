@@ -1,0 +1,29 @@
+======================================================================
+RESULTADOS - Modelo PMA Valparaiso
+======================================================================
+
+Estado del solver : 2 (Optimo)
+Funcion objetivo  : 48029.68
+MIP Gap           : 0.00%
+Tiempo de computo : 9.8 s
+
+----------------------------------------------------------------------
+ Dia  Centros  Equipos   Atend.   Esp.L   Esp.M  GravHosp  GravPMA
+----------------------------------------------------------------------
+   1        4       28      336    2688     606       403        0
+   2        8       48      596    4806     801       321        0
+   3       10       82     1036    6327     427       244        0
+   4       18      117     2174    6198     128       196        0
+   5       20      139     3241    4455      84       165        0
+   6       19      156     3731    2208      47       161        0
+   7       17      168     3384      21      12       124        0
+----------------------------------------------------------------------
+
+Centros activos por dia:
+  Dia 1: j20=ESCUELA BASICA LAS CRUCES, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j84=Estadio Municipal Ángel Navarrete Candia
+  Dia 2: j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j47=COLEGIO ACONCAGUA, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j78=Estadio Municipal Raúl Vargas Verdejo, j81=Estadio Municipal Fernando Ross Marchessi, j84=Estadio Municipal Ángel Navarrete Candia
+  Dia 3: j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j47=COLEGIO ACONCAGUA, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j78=Estadio Municipal Raúl Vargas Verdejo, j81=Estadio Municipal Fernando Ross Marchessi, j84=Estadio Municipal Ángel Navarrete Candia
+  Dia 4: j3=COLEGIO EDUPAC, j6=COLEGIO APUMANQUE, j7=COLEGIO EDUCENTER, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j21=COLEGIO PARROQUIAL SAN NICOLAS, j26=ESCUELA GABRIELA MISTRAL, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j38=ESCUELA PAPUDO, j47=COLEGIO ACONCAGUA, j54=COLEGIO ESPIRITU SANTO, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j60=LICEO DARIO SALAS, j68=COLEGIO ALEMAN DE VALPARAISO, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi, j82=Estadio Municipal Eugenio Castro González, j84=Estadio Municipal Ángel Navarrete Candia
+  Dia 5: j3=COLEGIO EDUPAC, j5=COLEGIO BECARB II, j6=COLEGIO APUMANQUE, j7=COLEGIO EDUCENTER, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j20=ESCUELA BASICA LAS CRUCES, j26=ESCUELA GABRIELA MISTRAL, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j38=ESCUELA PAPUDO, j39=COL. CATOLICO PDTE.MANUEL MONTT, j47=COLEGIO ACONCAGUA, j52=LICEO PARROQUIAL TERESITA DE LOS ANDES, j54=COLEGIO ESPIRITU SANTO, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j60=LICEO DARIO SALAS, j68=COLEGIO ALEMAN DE VALPARAISO, j73=Estadio Elías Figueroa Brander, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín, j82=Estadio Municipal Eugenio Castro González
+  Dia 6: j3=COLEGIO EDUPAC, j5=COLEGIO BECARB II, j6=COLEGIO APUMANQUE, j7=COLEGIO EDUCENTER, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j20=ESCUELA BASICA LAS CRUCES, j26=ESCUELA GABRIELA MISTRAL, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j38=ESCUELA PAPUDO, j39=COL. CATOLICO PDTE.MANUEL MONTT, j47=COLEGIO ACONCAGUA, j52=LICEO PARROQUIAL TERESITA DE LOS ANDES, j54=COLEGIO ESPIRITU SANTO, j60=LICEO DARIO SALAS, j68=COLEGIO ALEMAN DE VALPARAISO, j73=Estadio Elías Figueroa Brander, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín, j82=Estadio Municipal Eugenio Castro González
+  Dia 7: j3=COLEGIO EDUPAC, j5=COLEGIO BECARB II, j7=COLEGIO EDUCENTER, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j20=ESCUELA BASICA LAS CRUCES, j26=ESCUELA GABRIELA MISTRAL, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j38=ESCUELA PAPUDO, j39=COL. CATOLICO PDTE.MANUEL MONTT, j47=COLEGIO ACONCAGUA, j52=LICEO PARROQUIAL TERESITA DE LOS ANDES, j54=COLEGIO ESPIRITU SANTO, j60=LICEO DARIO SALAS, j68=COLEGIO ALEMAN DE VALPARAISO, j73=Estadio Elías Figueroa Brander, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín
