@@ -1,0 +1,29 @@
+======================================================================
+RESULTADOS - Modelo PMA Valparaiso
+======================================================================
+
+Estado del solver : 2 (Optimo)
+Funcion objetivo  : 45924.68
+MIP Gap           : 0.00%
+Tiempo de computo : 10.6 s
+
+----------------------------------------------------------------------
+ Dia  Centros  Equipos   Atend.   Esp.L   Esp.M  GravHosp  GravPMA
+----------------------------------------------------------------------
+   1        5       28      336    2688     606       403        0
+   2        9       48      576    4839     788       321        0
+   3       13       82      984    6451     374       244        0
+   4       16      117     2334    6156      81       196        0
+   5       21      139     3384    4265      41       165        0
+   6       18      156     3776    1950      27       161        0
+   7       15      168     3107      21      11       124        0
+----------------------------------------------------------------------
+
+Centros activos por dia:
+  Dia 1: j27=ESCUELA PARTICULAR INST. SANTA MARIA, j66=COLEGIO HISPANO, j73=Estadio Elías Figueroa Brander, j74=Complejo Deportivo Bernardo O'Higgins, j76=Estadio Municipal Ítalo Composto Scarpatti
+  Dia 2: j20=ESCUELA BASICA LAS CRUCES, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j58=COLEGIO ALONSO DE ERCILLA, j66=COLEGIO HISPANO, j73=Estadio Elías Figueroa Brander, j74=Complejo Deportivo Bernardo O'Higgins, j76=Estadio Municipal Ítalo Composto Scarpatti, j78=Estadio Municipal Raúl Vargas Verdejo, j84=Estadio Municipal Ángel Navarrete Candia
+  Dia 3: j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j22=LICEO MUNICIPAL LUIS LABORDA, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j44=COLEGIO CERVANTINO, j45=INSTITUTO RAFAEL ARIZTIA, j58=COLEGIO ALONSO DE ERCILLA, j66=COLEGIO HISPANO, j73=Estadio Elías Figueroa Brander, j74=Complejo Deportivo Bernardo O'Higgins, j76=Estadio Municipal Ítalo Composto Scarpatti, j78=Estadio Municipal Raúl Vargas Verdejo, j84=Estadio Municipal Ángel Navarrete Candia
+  Dia 4: j3=COLEGIO EDUPAC, j4=LICEO Y ESCUELA MUNICIPAL, j15=COLEGIO ALTAZOR, j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j22=LICEO MUNICIPAL LUIS LABORDA, j44=COLEGIO CERVANTINO, j45=INSTITUTO RAFAEL ARIZTIA, j57=LICEO PART, MIXTO SAN FELIPE, j58=COLEGIO ALONSO DE ERCILLA, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j70=COLEGIO PARROQUIAL FRANCISCO DIDIER, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín, j83=Estadio Municipal Arturo Longton Guerrero, j84=Estadio Municipal Ángel Navarrete Candia
+  Dia 5: j3=COLEGIO EDUPAC, j4=LICEO Y ESCUELA MUNICIPAL, j15=COLEGIO ALTAZOR, j16=COLEGIO VILLA ACONCAGUA, j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j22=LICEO MUNICIPAL LUIS LABORDA, j28=COLEGIO NACIONAL, j39=COL. CATOLICO PDTE.MANUEL MONTT, j44=COLEGIO CERVANTINO, j45=INSTITUTO RAFAEL ARIZTIA, j53=INSTITUTO DEL PUERTO DE SAN ANTONIO, j57=LICEO PART, MIXTO SAN FELIPE, j58=COLEGIO ALONSO DE ERCILLA, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j63=COLEGIO SALESIANO VALPARAISO, j70=COLEGIO PARROQUIAL FRANCISCO DIDIER, j76=Estadio Municipal Ítalo Composto Scarpatti, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín, j83=Estadio Municipal Arturo Longton Guerrero
+  Dia 6: j3=COLEGIO EDUPAC, j4=LICEO Y ESCUELA MUNICIPAL, j15=COLEGIO ALTAZOR, j16=COLEGIO VILLA ACONCAGUA, j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j22=LICEO MUNICIPAL LUIS LABORDA, j28=COLEGIO NACIONAL, j39=COL. CATOLICO PDTE.MANUEL MONTT, j53=INSTITUTO DEL PUERTO DE SAN ANTONIO, j57=LICEO PART, MIXTO SAN FELIPE, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j63=COLEGIO SALESIANO VALPARAISO, j70=COLEGIO PARROQUIAL FRANCISCO DIDIER, j76=Estadio Municipal Ítalo Composto Scarpatti, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín, j83=Estadio Municipal Arturo Longton Guerrero
+  Dia 7: j3=COLEGIO EDUPAC, j15=COLEGIO ALTAZOR, j16=COLEGIO VILLA ACONCAGUA, j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j28=COLEGIO NACIONAL, j39=COL. CATOLICO PDTE.MANUEL MONTT, j53=INSTITUTO DEL PUERTO DE SAN ANTONIO, j57=LICEO PART, MIXTO SAN FELIPE, j63=COLEGIO SALESIANO VALPARAISO, j70=COLEGIO PARROQUIAL FRANCISCO DIDIER, j76=Estadio Municipal Ítalo Composto Scarpatti, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín, j83=Estadio Municipal Arturo Longton Guerrero
