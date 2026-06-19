@@ -5,7 +5,7 @@ RESULTADOS - Modelo PMA Valparaiso
 Estado del solver : 2 (Optimo)
 Funcion objetivo  : 45924.68
 MIP Gap           : 0.00%
-Tiempo de computo : 10.6 s
+Tiempo de computo : 6.2 s
 
 ----------------------------------------------------------------------
  Dia  Centros  Equipos   Atend.   Esp.L   Esp.M  GravHosp  GravPMA

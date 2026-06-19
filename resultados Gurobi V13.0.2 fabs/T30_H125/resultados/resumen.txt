@@ -1,0 +1,29 @@
+======================================================================
+RESULTADOS - Modelo PMA Valparaiso
+======================================================================
+
+Estado del solver : 2 (Optimo)
+Funcion objetivo  : 64407.68
+MIP Gap           : 0.01%
+Tiempo de computo : 15.2 s
+
+----------------------------------------------------------------------
+ Dia  Centros  Equipos   Atend.   Esp.L   Esp.M  GravHosp  GravPMA
+----------------------------------------------------------------------
+   1        4       24      288    2688     654       403        0
+   2        8       40      480    4839     932       321        0
+   3       11       69      884    6352     717       244        0
+   4       19       97     1339    7212     264       196        0
+   5       21      116     2590    6150     190       165        0
+   6       21      130     3002    4650     135       161        0
+   7       19      140     3454    2401      92       124        0
+----------------------------------------------------------------------
+
+Centros activos por dia:
+  Dia 1: j23=COLEGIO LEONARDO DA VINCI, j72=Gimnasio Polideportivo de Viña del Mar, j76=Estadio Municipal Ítalo Composto Scarpatti, j83=Estadio Municipal Arturo Longton Guerrero
+  Dia 2: j7=COLEGIO EDUCENTER, j23=COLEGIO LEONARDO DA VINCI, j37=COLEGIO ALEMAN DE SAN FELIPE, j72=Gimnasio Polideportivo de Viña del Mar, j76=Estadio Municipal Ítalo Composto Scarpatti, j81=Estadio Municipal Fernando Ross Marchessi, j83=Estadio Municipal Arturo Longton Guerrero, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 3: j7=COLEGIO EDUCENTER, j14=COLEGIO PARTICULAR CALIFORNIA, j23=COLEGIO LEONARDO DA VINCI, j37=COLEGIO ALEMAN DE SAN FELIPE, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j72=Gimnasio Polideportivo de Viña del Mar, j76=Estadio Municipal Ítalo Composto Scarpatti, j81=Estadio Municipal Fernando Ross Marchessi, j82=Estadio Municipal Eugenio Castro González, j83=Estadio Municipal Arturo Longton Guerrero, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 4: j4=LICEO Y ESCUELA MUNICIPAL, j5=COLEGIO BECARB II, j7=COLEGIO EDUCENTER, j14=COLEGIO PARTICULAR CALIFORNIA, j24=LICEO SAN ISIDRO, j26=ESCUELA GABRIELA MISTRAL, j37=COLEGIO ALEMAN DE SAN FELIPE, j42=COMPLEJO EDUCACIONAL SARGENTO ALDEA, j56=LICEO SAN ESTEBAN, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j63=COLEGIO SALESIANO VALPARAISO, j67=LICEO PARROQUIAL SAN ANTONIO, j76=Estadio Municipal Ítalo Composto Scarpatti, j79=Gimnasio Municipal Quilpué, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi, j82=Estadio Municipal Eugenio Castro González, j83=Estadio Municipal Arturo Longton Guerrero, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 5: j4=LICEO Y ESCUELA MUNICIPAL, j5=COLEGIO BECARB II, j7=COLEGIO EDUCENTER, j14=COLEGIO PARTICULAR CALIFORNIA, j24=LICEO SAN ISIDRO, j26=ESCUELA GABRIELA MISTRAL, j37=COLEGIO ALEMAN DE SAN FELIPE, j42=COMPLEJO EDUCACIONAL SARGENTO ALDEA, j55=ESCUELA PABLO NERUDA, j56=LICEO SAN ESTEBAN, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j63=COLEGIO SALESIANO VALPARAISO, j65=COLEGIO NACIONAL, j67=LICEO PARROQUIAL SAN ANTONIO, j68=COLEGIO ALEMAN DE VALPARAISO, j75=Estadio Municipal Lucio Fariña Fernández, j79=Gimnasio Municipal Quilpué, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi, j82=Estadio Municipal Eugenio Castro González, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 6: j4=LICEO Y ESCUELA MUNICIPAL, j5=COLEGIO BECARB II, j7=COLEGIO EDUCENTER, j14=COLEGIO PARTICULAR CALIFORNIA, j24=LICEO SAN ISIDRO, j26=ESCUELA GABRIELA MISTRAL, j37=COLEGIO ALEMAN DE SAN FELIPE, j42=COMPLEJO EDUCACIONAL SARGENTO ALDEA, j55=ESCUELA PABLO NERUDA, j56=LICEO SAN ESTEBAN, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j63=COLEGIO SALESIANO VALPARAISO, j65=COLEGIO NACIONAL, j67=LICEO PARROQUIAL SAN ANTONIO, j68=COLEGIO ALEMAN DE VALPARAISO, j75=Estadio Municipal Lucio Fariña Fernández, j79=Gimnasio Municipal Quilpué, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi, j82=Estadio Municipal Eugenio Castro González, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 7: j4=LICEO Y ESCUELA MUNICIPAL, j5=COLEGIO BECARB II, j7=COLEGIO EDUCENTER, j24=LICEO SAN ISIDRO, j26=ESCUELA GABRIELA MISTRAL, j37=COLEGIO ALEMAN DE SAN FELIPE, j42=COMPLEJO EDUCACIONAL SARGENTO ALDEA, j55=ESCUELA PABLO NERUDA, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j63=COLEGIO SALESIANO VALPARAISO, j65=COLEGIO NACIONAL, j67=LICEO PARROQUIAL SAN ANTONIO, j68=COLEGIO ALEMAN DE VALPARAISO, j75=Estadio Municipal Lucio Fariña Fernández, j79=Gimnasio Municipal Quilpué, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi, j82=Estadio Municipal Eugenio Castro González, j85=Estadio Municipal Gustavo Ocaranza
