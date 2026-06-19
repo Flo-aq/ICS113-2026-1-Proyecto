@@ -1,0 +1,29 @@
+======================================================================
+RESULTADOS - Modelo PMA Valparaiso
+======================================================================
+
+Estado del solver : 2 (Optimo)
+Funcion objetivo  : 64407.68
+MIP Gap           : 0.01%
+Tiempo de computo : 14.4 s
+
+----------------------------------------------------------------------
+ Dia  Centros  Equipos   Atend.   Esp.L   Esp.M  GravHosp  GravPMA
+----------------------------------------------------------------------
+   1        2       24      288    2688     654       403        0
+   2        6       40      480    4839     932       321        0
+   3       11       69      884    6352     717       244        0
+   4       18       97     1339    7212     264       196        0
+   5       22      116     2527    6220     183       165        0
+   6       20      130     2938    4790     121       161        0
+   7       19      140     3392    2611      71       124        0
+----------------------------------------------------------------------
+
+Centros activos por dia:
+  Dia 1: j47=COLEGIO ACONCAGUA, j72=Gimnasio Polideportivo de Viña del Mar
+  Dia 2: j24=LICEO SAN ISIDRO, j37=COLEGIO ALEMAN DE SAN FELIPE, j47=COLEGIO ACONCAGUA, j72=Gimnasio Polideportivo de Viña del Mar, j81=Estadio Municipal Fernando Ross Marchessi, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 3: j7=COLEGIO EDUCENTER, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j24=LICEO SAN ISIDRO, j37=COLEGIO ALEMAN DE SAN FELIPE, j47=COLEGIO ACONCAGUA, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j81=Estadio Municipal Fernando Ross Marchessi, j82=Estadio Municipal Eugenio Castro González, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 4: j3=COLEGIO EDUPAC, j5=COLEGIO BECARB II, j7=COLEGIO EDUCENTER, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j24=LICEO SAN ISIDRO, j26=ESCUELA GABRIELA MISTRAL, j37=COLEGIO ALEMAN DE SAN FELIPE, j42=COMPLEJO EDUCACIONAL SARGENTO ALDEA, j47=COLEGIO ACONCAGUA, j51=CENTRO DE FORMACIÓN ACADÉMICA PERFECTO DE LA FUENTE DEL VILLAR, j55=ESCUELA PABLO NERUDA, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi, j82=Estadio Municipal Eugenio Castro González, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 5: j3=COLEGIO EDUPAC, j5=COLEGIO BECARB II, j7=COLEGIO EDUCENTER, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j24=LICEO SAN ISIDRO, j26=ESCUELA GABRIELA MISTRAL, j37=COLEGIO ALEMAN DE SAN FELIPE, j38=ESCUELA PAPUDO, j42=COMPLEJO EDUCACIONAL SARGENTO ALDEA, j51=CENTRO DE FORMACIÓN ACADÉMICA PERFECTO DE LA FUENTE DEL VILLAR, j55=ESCUELA PABLO NERUDA, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j63=COLEGIO SALESIANO VALPARAISO, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j75=Estadio Municipal Lucio Fariña Fernández, j79=Gimnasio Municipal Quilpué, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi, j82=Estadio Municipal Eugenio Castro González, j84=Estadio Municipal Ángel Navarrete Candia, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 6: j3=COLEGIO EDUPAC, j5=COLEGIO BECARB II, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j24=LICEO SAN ISIDRO, j26=ESCUELA GABRIELA MISTRAL, j37=COLEGIO ALEMAN DE SAN FELIPE, j38=ESCUELA PAPUDO, j42=COMPLEJO EDUCACIONAL SARGENTO ALDEA, j51=CENTRO DE FORMACIÓN ACADÉMICA PERFECTO DE LA FUENTE DEL VILLAR, j55=ESCUELA PABLO NERUDA, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j63=COLEGIO SALESIANO VALPARAISO, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j75=Estadio Municipal Lucio Fariña Fernández, j79=Gimnasio Municipal Quilpué, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi, j82=Estadio Municipal Eugenio Castro González, j84=Estadio Municipal Ángel Navarrete Candia
+  Dia 7: j3=COLEGIO EDUPAC, j5=COLEGIO BECARB II, j24=LICEO SAN ISIDRO, j26=ESCUELA GABRIELA MISTRAL, j37=COLEGIO ALEMAN DE SAN FELIPE, j38=ESCUELA PAPUDO, j42=COMPLEJO EDUCACIONAL SARGENTO ALDEA, j51=CENTRO DE FORMACIÓN ACADÉMICA PERFECTO DE LA FUENTE DEL VILLAR, j55=ESCUELA PABLO NERUDA, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j63=COLEGIO SALESIANO VALPARAISO, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j75=Estadio Municipal Lucio Fariña Fernández, j79=Gimnasio Municipal Quilpué, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi, j82=Estadio Municipal Eugenio Castro González, j84=Estadio Municipal Ángel Navarrete Candia

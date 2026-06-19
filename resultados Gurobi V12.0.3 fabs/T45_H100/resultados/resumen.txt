@@ -1,0 +1,29 @@
+======================================================================
+RESULTADOS - Modelo PMA Valparaiso
+======================================================================
+
+Estado del solver : 2 (Optimo)
+Funcion objetivo  : 80444.18
+MIP Gap           : 0.01%
+Tiempo de computo : 3.2 s
+
+----------------------------------------------------------------------
+ Dia  Centros  Equipos   Atend.   Esp.L   Esp.M  GravHosp  GravPMA
+----------------------------------------------------------------------
+   1        1       19      228    2688     714       403        0
+   2        5       32      384    4839    1088       321        0
+   3       10       55      680    6418    1011       244        0
+   4       13       78      956    7677     543       196        0
+   5       17       93     1502    8000     172       165        0
+   6       16      104     2281    7218     120       161        0
+   7       12      112     2523    5880      97       124        0
+----------------------------------------------------------------------
+
+Centros activos por dia:
+  Dia 1: j83=Estadio Municipal Arturo Longton Guerrero
+  Dia 2: j6=COLEGIO APUMANQUE, j20=ESCUELA BASICA LAS CRUCES, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j64=LICEO EDUARDO DE LA BARRA, j83=Estadio Municipal Arturo Longton Guerrero
+  Dia 3: j6=COLEGIO APUMANQUE, j20=ESCUELA BASICA LAS CRUCES, j37=COLEGIO ALEMAN DE SAN FELIPE, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j64=LICEO EDUARDO DE LA BARRA, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j78=Estadio Municipal Raúl Vargas Verdejo, j83=Estadio Municipal Arturo Longton Guerrero
+  Dia 4: j6=COLEGIO APUMANQUE, j20=ESCUELA BASICA LAS CRUCES, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j37=COLEGIO ALEMAN DE SAN FELIPE, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j64=LICEO EDUARDO DE LA BARRA, j67=LICEO PARROQUIAL SAN ANTONIO, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j73=Estadio Elías Figueroa Brander, j78=Estadio Municipal Raúl Vargas Verdejo, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 5: j4=LICEO Y ESCUELA MUNICIPAL, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j14=COLEGIO PARTICULAR CALIFORNIA, j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j26=ESCUELA GABRIELA MISTRAL, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j37=COLEGIO ALEMAN DE SAN FELIPE, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j67=LICEO PARROQUIAL SAN ANTONIO, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j73=Estadio Elías Figueroa Brander, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 6: j4=LICEO Y ESCUELA MUNICIPAL, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j14=COLEGIO PARTICULAR CALIFORNIA, j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j26=ESCUELA GABRIELA MISTRAL, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j67=LICEO PARROQUIAL SAN ANTONIO, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j73=Estadio Elías Figueroa Brander, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 7: j4=LICEO Y ESCUELA MUNICIPAL, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j14=COLEGIO PARTICULAR CALIFORNIA, j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j26=ESCUELA GABRIELA MISTRAL, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j68=COLEGIO ALEMAN DE VALPARAISO, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín, j85=Estadio Municipal Gustavo Ocaranza

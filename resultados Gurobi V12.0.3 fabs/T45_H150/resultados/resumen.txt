@@ -1,0 +1,29 @@
+======================================================================
+RESULTADOS - Modelo PMA Valparaiso
+======================================================================
+
+Estado del solver : 2 (Optimo)
+Funcion objetivo  : 48029.68
+MIP Gap           : 0.00%
+Tiempo de computo : 4.3 s
+
+----------------------------------------------------------------------
+ Dia  Centros  Equipos   Atend.   Esp.L   Esp.M  GravHosp  GravPMA
+----------------------------------------------------------------------
+   1        3       28      336    2688     606       403        0
+   2        9       48      596    4806     801       321        0
+   3       12       82     1035    6327     427       244        0
+   4       16      117     2174    6198     128       196        0
+   5       23      139     3241    4455      84       165        0
+   6       20      156     3731    2208      47       161        0
+   7       19      168     3384      21      12       124        0
+----------------------------------------------------------------------
+
+Centros activos por dia:
+  Dia 1: j27=ESCUELA PARTICULAR INST. SANTA MARIA, j72=Gimnasio Polideportivo de Viña del Mar, j73=Estadio Elías Figueroa Brander
+  Dia 2: j20=ESCUELA BASICA LAS CRUCES, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j73=Estadio Elías Figueroa Brander, j75=Estadio Municipal Lucio Fariña Fernández, j78=Estadio Municipal Raúl Vargas Verdejo, j81=Estadio Municipal Fernando Ross Marchessi
+  Dia 3: j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j60=LICEO DARIO SALAS, j68=COLEGIO ALEMAN DE VALPARAISO, j72=Gimnasio Polideportivo de Viña del Mar, j73=Estadio Elías Figueroa Brander, j75=Estadio Municipal Lucio Fariña Fernández, j78=Estadio Municipal Raúl Vargas Verdejo, j81=Estadio Municipal Fernando Ross Marchessi
+  Dia 4: j3=COLEGIO EDUPAC, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j26=ESCUELA GABRIELA MISTRAL, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j33=COLEGIO SANTA ISABEL, j38=ESCUELA PAPUDO, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j60=LICEO DARIO SALAS, j68=COLEGIO ALEMAN DE VALPARAISO, j71=Estadio Sausalito, j75=Estadio Municipal Lucio Fariña Fernández, j78=Estadio Municipal Raúl Vargas Verdejo, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi
+  Dia 5: j3=COLEGIO EDUPAC, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j20=ESCUELA BASICA LAS CRUCES, j21=COLEGIO PARROQUIAL SAN NICOLAS, j26=ESCUELA GABRIELA MISTRAL, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j33=COLEGIO SANTA ISABEL, j38=ESCUELA PAPUDO, j40=LICEO JOSE MANUEL BORGONO NUNEZ, j59=COLEGIO BICENTENARIO SANTA MARÍA DE ACONCAGUA, j60=LICEO DARIO SALAS, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j68=COLEGIO ALEMAN DE VALPARAISO, j71=Estadio Sausalito, j73=Estadio Elías Figueroa Brander, j75=Estadio Municipal Lucio Fariña Fernández, j78=Estadio Municipal Raúl Vargas Verdejo, j79=Gimnasio Municipal Quilpué, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi, j82=Estadio Municipal Eugenio Castro González, j84=Estadio Municipal Ángel Navarrete Candia, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 6: j3=COLEGIO EDUPAC, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j21=COLEGIO PARROQUIAL SAN NICOLAS, j26=ESCUELA GABRIELA MISTRAL, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j33=COLEGIO SANTA ISABEL, j38=ESCUELA PAPUDO, j40=LICEO JOSE MANUEL BORGONO NUNEZ, j60=LICEO DARIO SALAS, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j68=COLEGIO ALEMAN DE VALPARAISO, j71=Estadio Sausalito, j73=Estadio Elías Figueroa Brander, j78=Estadio Municipal Raúl Vargas Verdejo, j79=Gimnasio Municipal Quilpué, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi, j82=Estadio Municipal Eugenio Castro González, j84=Estadio Municipal Ángel Navarrete Candia, j85=Estadio Municipal Gustavo Ocaranza
+  Dia 7: j3=COLEGIO EDUPAC, j13=LICEO BICENTENARIO POLIVALENTE FERNANDO SILVA CASTELLÓN, j21=COLEGIO PARROQUIAL SAN NICOLAS, j26=ESCUELA GABRIELA MISTRAL, j27=ESCUELA PARTICULAR INST. SANTA MARIA, j38=ESCUELA PAPUDO, j40=LICEO JOSE MANUEL BORGONO NUNEZ, j60=LICEO DARIO SALAS, j62=COLEGIO STO. DOMINGO HELEN LEE LASSEN, j68=COLEGIO ALEMAN DE VALPARAISO, j71=Estadio Sausalito, j73=Estadio Elías Figueroa Brander, j78=Estadio Municipal Raúl Vargas Verdejo, j79=Gimnasio Municipal Quilpué, j80=Estadio Municipal Arturo Echazarreta Larraín, j81=Estadio Municipal Fernando Ross Marchessi, j82=Estadio Municipal Eugenio Castro González, j84=Estadio Municipal Ángel Navarrete Candia, j85=Estadio Municipal Gustavo Ocaranza
